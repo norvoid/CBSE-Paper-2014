@@ -1,0 +1,279 @@
+\begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
+\item Let $k \neq 0$. The binary operation $*$ on $\mathbb{R}-\cbrak{0}$ defined by
+\begin{align}
+a * b = \frac{ab}{k}
+\label{eq:EE26BTECHXXXXX-star}
+\end{align}
+is associative, has $k$ as its identity, and with $\phi\brak{a} = \frac{a}{k}$,
+\begin{align}
+\phi\brak{a * b} = \phi\brak{a}\phi\brak{b}
+\label{eq:EE26BTECHXXXXX-star-phi}
+\end{align}
+\solution
+From \eqref{eq:EE26BTECHXXXXX-star},
+\begin{align}
+\phi\brak{a * b} = \frac{1}{k}\cdot\frac{ab}{k} = \frac{a}{k}\cdot\frac{b}{k}
+\end{align}
+yielding \eqref{eq:EE26BTECHXXXXX-star-phi}. Since $\phi$ is one-to-one,
+\begin{align}
+\phi\brak{\brak{a*b}*c} = \phi\brak{a}\phi\brak{b}\phi\brak{c} = \phi\brak{a*\brak{b*c}}
+\end{align}
+and $\phi\brak{a * k} = \phi\brak{a}\phi\brak{k} = \phi\brak{a}$, so $k$ is the identity.
+\item For $u \in \sbrak{-1,1}$,
+\begin{align}
+\sin^{-1}u + \cos^{-1}u = \frac{\pi}{2}
+\label{eq:EE26BTECHXXXXX-arcsin-comp}
+\end{align}
+\solution
+Let $\theta = \sin^{-1}u \in \sbrak{-\frac{\pi}{2},\frac{\pi}{2}}$. Then $\frac{\pi}{2}-\theta \in \sbrak{0,\pi}$ and
+\begin{align}
+\cos\brak{\frac{\pi}{2}-\theta} = \sin\theta = u
+\implies \cos^{-1}u = \frac{\pi}{2}-\theta
+\end{align}
+yielding \eqref{eq:EE26BTECHXXXXX-arcsin-comp}.
+\item The principal value of $\cot^{-1}$ lies in $\brak{0,\pi}$ and
+\begin{align}
+\cot^{-1}\brak{\cot\theta} = \theta, \quad \theta \in \brak{0,\pi}
+\label{eq:EE26BTECHXXXXX-pv-cot}
+\end{align}
+Similarly,
+\begin{align}
+\tan^{-1}\brak{\tan\theta} = \theta, \quad \theta \in \brak{-\frac{\pi}{2},\frac{\pi}{2}}
+\end{align}
+\item For any real $x$,
+\begin{align}
+1 \pm \sin x = \brak{\cos\frac{x}{2} \pm \sin\frac{x}{2}}^2
+\label{eq:EE26BTECHXXXXX-half-angle}
+\end{align}
+\solution
+Expanding the right hand side,
+\begin{align}
+\cos^2\frac{x}{2} + \sin^2\frac{x}{2} \pm 2\sin\frac{x}{2}\cos\frac{x}{2} = 1 \pm \sin x
+\end{align}
+\item Let $\phi: S \to \mathbb{R}^m$ be any function. The relation
+\begin{align}
+\vec{x} R \vec{y} \iff \phi\brak{\vec{x}} = \phi\brak{\vec{y}}
+\label{eq:EE26BTECHXXXXX-kernel-rel}
+\end{align}
+is an equivalence relation and the equivalence class of $\vec{x}$ is
+\begin{align}
+\sbrak{\vec{x}} = \cbrak{\vec{y} \in S : \phi\brak{\vec{y}} = \phi\brak{\vec{x}}}
+\end{align}
+\solution
+\begin{align}
+\phi\brak{\vec{x}} &= \phi\brak{\vec{x}} && \text{(reflexive)}
+\\
+\phi\brak{\vec{x}} = \phi\brak{\vec{y}} &\implies \phi\brak{\vec{y}} = \phi\brak{\vec{x}} && \text{(symmetric)}
+\\
+\phi\brak{\vec{x}} = \phi\brak{\vec{y}},\, \phi\brak{\vec{y}} = \phi\brak{\vec{z}} &\implies \phi\brak{\vec{x}} = \phi\brak{\vec{z}} && \text{(transitive)}
+\end{align}
+\item For $n\times n$ matrices,
+\begin{align}
+\mydet{\vec{AB}} = \mydet{\vec{A}}\mydet{\vec{B}}
+\label{eq:EE26BTECHXXXXX-det-product}
+\end{align}
+\solution
+Any invertible $\vec{A}$ is a product $\vec{E}_1\vec{E}_2\cdots\vec{E}_k$ of elementary matrices and, for a single elementary matrix, it is easy to verify that $\mydet{\vec{E}\vec{B}} = \mydet{\vec{E}}\mydet{\vec{B}}$. Hence
+\begin{align}
+\mydet{\vec{AB}} = \mydet{\vec{E}_1}\cdots\mydet{\vec{E}_k}\mydet{\vec{B}}
+= \mydet{\vec{A}}\mydet{\vec{B}}
+\end{align}
+upon substituting $\vec{B} = \vec{I}$. If $\vec{A}$ is singular, so is $\vec{AB}$ and both sides are $0$.
+\item Adding a multiple of one row of a matrix to another row does not change its determinant.
+\begin{align}
+\mydet{\vec{E}\vec{A}} = \mydet{\vec{A}}, \quad \vec{E} = \vec{I} + \lambda\vec{e}_i\vec{e}_j^{\top}, \, i \neq j
+\label{eq:EE26BTECHXXXXX-det-rowop}
+\end{align}
+Also, a common factor of a row can be taken out of the determinant, and the determinant can be expanded along any row.
+\solution
+$\vec{E}$ is triangular with unit diagonal, so $\mydet{\vec{E}} = 1$. Substituting in \eqref{eq:EE26BTECHXXXXX-det-product}, we get \eqref{eq:EE26BTECHXXXXX-det-rowop}.
+\item The scalar triple product of three vectors is
+\begin{align}
+\sbrak{\vec{a}, \vec{b}, \vec{c}} = \vec{a}^{\top}\brak{\vec{b}\times\vec{c}} = \mydet{\vec{a} & \vec{b} & \vec{c}}
+\label{eq:EE26BTECHXXXXX-triple}
+\end{align}
+\solution
+Expanding $\mydet{\vec{a} & \vec{b} & \vec{c}}$ along the first column, the cofactors of $\vec{a}$ are the components of $\vec{b}\times\vec{c}$.
+\item The scalar projection of $\vec{a}$ on $\vec{b}$ is
+\begin{align}
+\frac{\vec{a}^{\top}\vec{b}}{\norm{\vec{b}}}
+\label{eq:EE26BTECHXXXXX-proj}
+\end{align}
+Also,
+\begin{align}
+\norm{\vec{a}+\vec{b}}^2 = \norm{\vec{a}}^2 + 2\vec{a}^{\top}\vec{b} + \norm{\vec{b}}^2,
+\quad
+\cos\theta = \frac{\vec{a}^{\top}\vec{b}}{\norm{\vec{a}}\norm{\vec{b}}}
+\label{eq:EE26BTECHXXXXX-angle}
+\end{align}
+\solution
+Write $\vec{a} = \lambda\vec{b} + \vec{a}_{\perp}$ with $\vec{b}^{\top}\vec{a}_{\perp} = 0$. Then
+\begin{align}
+\lambda = \frac{\vec{a}^{\top}\vec{b}}{\norm{\vec{b}}^2}
+\implies \norm{\lambda\vec{b}} = \frac{\vec{a}^{\top}\vec{b}}{\norm{\vec{b}}}
+\end{align}
+The second result follows from expanding $\brak{\vec{a}+\vec{b}}^{\top}\brak{\vec{a}+\vec{b}}$.
+\item A plane with normal vector $\vec{n}$ is
+\begin{align}
+\vec{n}^{\top}\vec{x} = c
+\label{eq:EE26BTECHXXXXX-plane}
+\end{align}
+A plane parallel to \eqref{eq:EE26BTECHXXXXX-plane} and through $\vec{P}_0$ is $\vec{n}^{\top}\vec{x} = \vec{n}^{\top}\vec{P}_0$. The plane through $\vec{A}, \vec{B}, \vec{C}$ has a normal vector $\vec{n}$ satisfying
+\begin{align}
+\myvec{\brak{\vec{B}-\vec{A}}^{\top} \\ \brak{\vec{C}-\vec{A}}^{\top}}\vec{n} = \vec{0}, \quad c = \vec{n}^{\top}\vec{A}
+\label{eq:EE26BTECHXXXXX-plane-3pts}
+\end{align}
+The distance of $\vec{P}$ from \eqref{eq:EE26BTECHXXXXX-plane} is
+\begin{align}
+d = \frac{\abs{\vec{n}^{\top}\vec{P} - c}}{\norm{\vec{n}}}
+\label{eq:EE26BTECHXXXXX-plane-dist}
+\end{align}
+\solution
+The foot of the perpendicular is $\vec{Q} = \vec{P} - \lambda\vec{n}$. Since $\vec{n}^{\top}\vec{Q} = c$,
+\begin{align}
+\vec{n}^{\top}\vec{P} - \lambda\norm{\vec{n}}^2 = c
+\implies \lambda = \frac{\vec{n}^{\top}\vec{P} - c}{\norm{\vec{n}}^2}
+\end{align}
+yielding \eqref{eq:EE26BTECHXXXXX-plane-dist} from $d = \norm{\vec{P}-\vec{Q}} = \abs{\lambda}\norm{\vec{n}}$. The normal vector in \eqref{eq:EE26BTECHXXXXX-plane-3pts} is perpendicular to two directions in the plane.
+\item The lines $\vec{x} = \vec{A}_1 + \lambda\vec{m}_1$ and $\vec{x} = \vec{A}_2 + \mu\vec{m}_2$ intersect if and only if
+\begin{align}
+\vec{M}\myvec{\lambda \\ \mu} = \vec{A}_2 - \vec{A}_1, \quad \vec{M} = \myvec{\vec{m}_1 & -\vec{m}_2}
+\label{eq:EE26BTECHXXXXX-line-isect}
+\end{align}
+is consistent, i.e.
+\begin{align}
+\rank\brak{\vec{M}} = \rank\brak{\myvec{\vec{M} & \vec{A}_2 - \vec{A}_1}}
+\label{eq:EE26BTECHXXXXX-consistent}
+\end{align}
+If $\rank\brak{\vec{M}} = 2$, the point of intersection is unique.
+\solution
+At a common point, $\vec{A}_1 + \lambda\vec{m}_1 = \vec{A}_2 + \mu\vec{m}_2$, which yields \eqref{eq:EE26BTECHXXXXX-line-isect}. This system has a solution if and only if $\vec{A}_2 - \vec{A}_1$ lies in the column space of $\vec{M}$, which is \eqref{eq:EE26BTECHXXXXX-consistent}. If the columns are independent, the solution is unique.
+\item If $\mydet{\vec{A}} \neq 0$, then $\vec{Ax} = \vec{b}$ has the unique solution
+\begin{align}
+\vec{x} = \vec{A}^{-1}\vec{b}, \quad \vec{A}^{-1} = \frac{\text{adj}\brak{\vec{A}}}{\mydet{\vec{A}}}
+\label{eq:EE26BTECHXXXXX-linsolve}
+\end{align}
+\solution
+Multiplying $\vec{Ax} = \vec{b}$ on the left by $\vec{A}^{-1}$ yields \eqref{eq:EE26BTECHXXXXX-linsolve}. The inverse exists since $\mydet{\vec{A}} \neq 0$.
+\item The conditional probability of $A$ given $B$ is
+\begin{align}
+\pr{\cond{A}{B}} = \frac{\pr{AB}}{\pr{B}}, \quad \pr{B} > 0
+\label{eq:EE26BTECHXXXXX-cond}
+\end{align}
+If $E_1, E_2, \dots, E_n$ are mutually exclusive and exhaustive events, then (Bayes' theorem)
+\begin{align}
+\pr{\cond{E_i}{A}} = \frac{\pr{\cond{A}{E_i}}\pr{E_i}}{\sum_{j=1}^{n}\pr{\cond{A}{E_j}}\pr{E_j}}
+\label{eq:EE26BTECHXXXXX-bayes}
+\end{align}
+\solution
+From \eqref{eq:EE26BTECHXXXXX-cond}, $\pr{E_iA} = \pr{\cond{A}{E_i}}\pr{E_i}$. Since $A = \sum_j E_jA$ and the $E_jA$ are mutually exclusive, from \eqref{eq:EE26BTECHXXXXX-Prob_3},
+\begin{align}
+\pr{A} = \sum_{j=1}^{n}\pr{\cond{A}{E_j}}\pr{E_j}
+\end{align}
+Substituting in $\pr{\cond{E_i}{A}} = \frac{\pr{E_iA}}{\pr{A}}$ yields \eqref{eq:EE26BTECHXXXXX-bayes}.
+\item For mutually exclusive events $A$ and $B$,
+\begin{align}
+\pr{A + B} = \pr{A} + \pr{B} \label{eq:EE26BTECHXXXXX-Prob_3}
+\end{align}
+\item For $y > 0$,
+\begin{align}
+\frac{y^{\prime}}{y} = \brak{\ln y}^{\prime}, \quad
+\frac{y^{\prime\prime}}{y} - \brak{\frac{y^{\prime}}{y}}^2 = \brak{\ln y}^{\prime\prime}
+\label{eq:EE26BTECHXXXXX-logder}
+\end{align}
+\solution
+Using the quotient rule,
+\begin{align}
+\brak{\frac{y^{\prime}}{y}}^{\prime} = \frac{y^{\prime\prime}y - \brak{y^{\prime}}^2}{y^2}
+= \frac{y^{\prime\prime}}{y} - \brak{\frac{y^{\prime}}{y}}^2
+\end{align}
+\item If $f^{\prime}\brak{x} > 0$ on an interval $I$, $f$ is strictly increasing on $I$. If $f^{\prime}\brak{x} < 0$ on $I$, $f$ is strictly decreasing on $I$. Also, if $f^{\prime}\brak{c} = 0$ and $f^{\prime\prime}\brak{c} < 0$, $f$ has a maximum at $c$.
+\label{eq:EE26BTECHXXXXX-monotone}
+\\
+\solution
+For $a < b$ in $I$, by the mean value theorem there is a $\xi \in \brak{a,b}$ such that
+\begin{align}
+f\brak{b} - f\brak{a} = f^{\prime}\brak{\xi}\brak{b-a}
+\end{align}
+whose sign is the sign of $f^{\prime}\brak{\xi}$.
+\item The solution of
+\begin{align}
+y^{\prime} + P\brak{x}y = Q\brak{x}
+\end{align}
+is
+\begin{align}
+y = \frac{1}{\mu}\int \mu Q\, dx, \quad \mu = e^{\int P\, dx}
+\label{eq:EE26BTECHXXXXX-ode-lin}
+\end{align}
+\solution
+Since $\mu^{\prime} = P\mu$,
+\begin{align}
+\brak{\mu y}^{\prime} = \mu y^{\prime} + P\mu y = \mu Q
+\end{align}
+Integrating yields \eqref{eq:EE26BTECHXXXXX-ode-lin}.
+\item Integration by parts.
+\begin{align}
+\int u\, dv = uv - \int v\, du
+\label{eq:EE26BTECHXXXXX-parts}
+\end{align}
+\solution
+Integrating $\brak{uv}^{\prime} = u^{\prime}v + uv^{\prime}$ yields \eqref{eq:EE26BTECHXXXXX-parts}.
+\item Standard integrals.
+\begin{align}
+\int x^n\, dx &= \frac{x^{n+1}}{n+1} + C, \quad n \neq -1
+\\
+\int \frac{dx}{a^2 + x^2} &= \frac{1}{a}\tan^{-1}\frac{x}{a} + C, \quad a \neq 0
+\label{eq:EE26BTECHXXXXX-stdint}
+\\
+\int \sec^2 x\, dx &= \tan x + C, \quad \int \cosec^2 x\, dx = -\cot x + C
+\end{align}
+\solution
+For \eqref{eq:EE26BTECHXXXXX-stdint}, substituting $x = a\tan\theta$, $dx = a\sec^2\theta\, d\theta$,
+\begin{align}
+\int \frac{a\sec^2\theta}{a^2\brak{1+\tan^2\theta}}\, d\theta = \frac{1}{a}\int d\theta = \frac{\theta}{a} + C
+\end{align}
+\item For any $a, b$,
+\begin{align}
+a^3 + b^3 = \brak{a+b}^3 - 3ab\brak{a+b}
+\label{eq:EE26BTECHXXXXX-cube-sum}
+\end{align}
+\solution
+Expanding $\brak{a+b}^3 = a^3 + 3a^2b + 3ab^2 + b^3$ yields \eqref{eq:EE26BTECHXXXXX-cube-sum}.
+\item (King's property)
+\begin{align}
+\int_{a}^{b} f\brak{x}\, dx = \int_{a}^{b} f\brak{a+b-x}\, dx
+\label{eq:EE26BTECHXXXXX-king}
+\end{align}
+\solution
+Substituting $t = a + b - x$, $dx = -dt$, the limits $x = a, b$ become $t = b, a$.
+\begin{align}
+\int_{a}^{b} f\brak{x}\, dx = -\int_{b}^{a} f\brak{t}\, dt = \int_{a}^{b} f\brak{t}\, dt
+\end{align}
+\item In polar coordinates $x = r\cos\theta$, $y = r\sin\theta$,
+\begin{align}
+\iint_{D} dx\, dy = \iint_{D} r\, dr\, d\theta
+\label{eq:EE26BTECHXXXXX-polar-area}
+\end{align}
+\solution
+The Jacobian determinant is
+\begin{align}
+\mydet{\frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta}}
+= \mydet{\cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta} = r
+\end{align}
+\item (Corner point theorem) The maximum of $Z = \vec{c}^{\top}\vec{x}$ over a bounded polygon with vertices $\vec{v}_1, \dots, \vec{v}_m$ is attained at a vertex.
+\label{eq:EE26BTECHXXXXX-corner}
+\\
+\solution
+Any point of the polygon is $\vec{x} = \sum_i \theta_i\vec{v}_i$, with $\theta_i \ge 0$, $\sum_i\theta_i = 1$. Then
+\begin{align}
+\vec{c}^{\top}\vec{x} = \sum_i \theta_i\vec{c}^{\top}\vec{v}_i \le \max_i \vec{c}^{\top}\vec{v}_i
+\end{align}
+\item For a right circular cone of slant height $l$, semi-vertical angle $\alpha$, radius $r$ and height $h$,
+\begin{align}
+r = l\sin\alpha, \quad h = l\cos\alpha, \quad
+V = \frac{\pi}{3}r^2h = \frac{\pi}{3}\brak{l^2 - h^2}h
+\label{eq:EE26BTECHXXXXX-cone}
+\end{align}
+\solution
+The axis, radius and slant edge form a right triangle with hypotenuse $l$, so $r^2 + h^2 = l^2$, from which the above follows.
+\end{enumerate}
