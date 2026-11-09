@@ -281,11 +281,30 @@ If $y = x^x$, prove that $\dfrac{d^2y}{dx^2} - \dfrac{1}{y}\brak{\dfrac{dy}{dx}}
 \par
 \medskip
 \solution
-For $x > 0$, $y > 0$ and $\ln y = x\ln x$. From \eqref{eq:EE26BTECHXXXXX-logder},
+For $x > 0$, $y > 0$ and $\ln y = x\ln x$. Let $f = \brak{\ln y}^{\prime}$, so that
 \begin{align}
-\frac{y^{\prime}}{y} = \brak{x\ln x}^{\prime} = 1 + \ln x
-\\
-\frac{y^{\prime\prime}}{y} - \brak{\frac{y^{\prime}}{y}}^2 = \brak{1 + \ln x}^{\prime} = \frac{1}{x}
+f = \brak{x\ln x}^{\prime} = 1 + \ln x
+\end{align}
+From \eqref{eq:EE26BTECHXXXXX-laplace-table} and \eqref{eq:EE26BTECHXXXXX-laplace-ln},
+\begin{align}
+F\brak{s} = \mathcal{L}\cbrak{1 + \ln x} = \frac{1}{s} - \frac{\gamma + \ln s}{s}
+\implies sF\brak{s} = 1 - \gamma - \ln s
+\end{align}
+Let $g = xf = x + x\ln x$. Then $g\brak{0} = 0$, $g^{\prime} = f + xf^{\prime}$ and, from \eqref{eq:EE26BTECHXXXXX-laplace-xmult}, $G\brak{s} = -F^{\prime}\brak{s}$. Using \eqref{eq:EE26BTECHXXXXX-laplace-deriv},
+\begin{align}
+\mathcal{L}\cbrak{f + xf^{\prime}} = sG\brak{s} - g\brak{0} = -sF^{\prime}\brak{s}
+\end{align}
+yielding
+\begin{align}
+\mathcal{L}\cbrak{xf^{\prime}} = -sF^{\prime}\brak{s} - F\brak{s} = -\brak{sF\brak{s}}^{\prime} = \frac{1}{s}
+\end{align}
+Since $\frac{1}{s} = \mathcal{L}\cbrak{1}$ and the transform is one-to-one, $xf^{\prime} = 1$, i.e.
+\begin{align}
+\brak{\ln y}^{\prime\prime} = f^{\prime} = \frac{1}{x}
+\end{align}
+From \eqref{eq:EE26BTECHXXXXX-logder},
+\begin{align}
+\frac{y^{\prime\prime}}{y} - \brak{\frac{y^{\prime}}{y}}^2 = \frac{1}{x}
 \end{align}
 Multiplying by $y$,
 \begin{align}
@@ -309,7 +328,7 @@ Differentiating,
 \begin{align}
 f^{\prime}\brak{x} = 12x^3 - 12x^2 - 24x = 12x\brak{x-2}\brak{x+1}
 \end{align}
-The critical points are $x = -1, 0, 2$. The sign of $f^{\prime}$ on each interval is given in \tabref{tab:EE26BTECHXXXXX-sign}.
+The critical points are $x = -1, 0, 2$. The sign of $f^{\prime}$ on each interval is given in the table below.
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|}
@@ -374,19 +393,28 @@ Multiplying by $\frac{x}{\sqrt{1-y^2}}$, the variables get separated:
 \begin{align}
 xe^x\, dx + \frac{y}{\sqrt{1-y^2}}\, dy = 0
 \end{align}
-Using \eqref{eq:EE26BTECHXXXXX-parts} with $u = x$, $dv = e^x\, dx$,
+Let $z = \sqrt{1-y^2}$. Then $z\, dz = -y\, dy$, and the equation becomes
 \begin{align}
-\int xe^x\, dx = xe^x - \int e^x\, dx = \brak{x-1}e^x
+\frac{dz}{dx} = xe^x, \quad z\brak{0} = 0
 \end{align}
-Also, $\int \frac{y}{\sqrt{1-y^2}}\, dy = -\sqrt{1-y^2}$. Hence
+Taking the Laplace transform on both sides, from \eqref{eq:EE26BTECHXXXXX-laplace-deriv} and \eqref{eq:EE26BTECHXXXXX-laplace-table},
 \begin{align}
-\brak{x-1}e^x - \sqrt{1-y^2} = C
+sZ\brak{s} - z\brak{0} = \frac{1}{\brak{s-1}^2}
+\implies Z\brak{s} = \frac{1}{s\brak{s-1}^2}
 \end{align}
-Substituting $x = 0, y = 1$, $C = -1$. The particular solution is
+Using partial fractions,
+\begin{align}
+Z\brak{s} = \frac{1}{s} - \frac{1}{s-1} + \frac{1}{\brak{s-1}^2}
+\end{align}
+Taking the inverse transform from \eqref{eq:EE26BTECHXXXXX-laplace-table},
+\begin{align}
+z = 1 - e^x + xe^x = \brak{x-1}e^x + 1
+\end{align}
+Hence the particular solution is
 \begin{align}
 \sqrt{1-y^2} = \brak{x-1}e^x + 1
 \end{align}
-With $z = \sqrt{1-y^2}$, $z\, dz = -y\, dy$, and the equation reduces to $\frac{dz}{dx} = xe^x$, $z\brak{0} = 0$. The following code integrates this numerically and compares with the solution.
+The following code finds the transform and verifies the solution.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Separable\_ODE.py}@*)
 \end{lstlisting}
@@ -399,19 +427,28 @@ Solve the following differential equation
 \par
 \medskip
 \solution
-Dividing by $x^2 - 1$,
+Since $\brak{x^2-1}\frac{dy}{dx} + 2xy = \frac{d}{dx}\sbrak{\brak{x^2-1}y}$, let $w = \brak{x^2-1}y$. The equation becomes
 \begin{align}
-\frac{dy}{dx} + \frac{2x}{x^2-1}y = \frac{2}{\brak{x^2-1}^2}
+\frac{dw}{dx} = \frac{2}{x^2-1}
 \end{align}
-Here $P = \frac{2x}{x^2-1}$, so $\mu = e^{\int P\, dx} = x^2 - 1$ (a constant sign factor cancels). From \eqref{eq:EE26BTECHXXXXX-ode-lin},
+For $0 \le x < 1$, let $x = \tanh t$, $t \ge 0$. From \eqref{eq:EE26BTECHXXXXX-tanh-sub},
 \begin{align}
-\brak{x^2-1}y = \int \frac{2}{x^2-1}\, dx = \int \brak{\frac{1}{x-1} - \frac{1}{x+1}}\, dx
+\frac{dw}{dt} = \frac{dw}{dx}\cdot\frac{dx}{dt} = \frac{2}{x^2-1}\brak{1-x^2} = -2, \quad w\brak{0} = w_0
 \end{align}
-yielding
+Taking the Laplace transform on both sides, from \eqref{eq:EE26BTECHXXXXX-laplace-deriv},
+\begin{align}
+sW\brak{s} - w_0 = -\frac{2}{s}
+\implies W\brak{s} = \frac{w_0}{s} - \frac{2}{s^2}
+\end{align}
+Taking the inverse transform, $w = w_0 - 2t$. Substituting $t = \frac{1}{2}\ln\frac{1+x}{1-x}$ from \eqref{eq:EE26BTECHXXXXX-tanh-sub},
+\begin{align}
+w = \ln\frac{1-x}{1+x} + w_0
+\end{align}
+Hence, with $C = w_0$,
 \begin{align}
 y = \frac{1}{x^2-1}\sbrak{\ln\abs{\frac{x-1}{x+1}} + C}
 \end{align}
-The following code verifies the solution.
+Differentiating, $\frac{d}{dx}\ln\abs{\frac{x-1}{x+1}} = \frac{2}{x^2-1}$ for all $x \neq \pm 1$, so the same expression solves the equation on every interval. The following code finds the transform and verifies the solution.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Linear\_ODE.py}@*)
 \end{lstlisting}
@@ -656,7 +693,7 @@ where the first constraint is $360x + 240y \le 5760$. The feasible region in \fi
 \myvec{3 & 2 \\ 1 & 1}\vec{x} = \myvec{48 \\ 20}
 \implies \vec{x} = \myvec{1 & -2 \\ -1 & 3}\myvec{48 \\ 20} = \myvec{8 \\ 12}
 \end{align}
-The value of $Z$ at the vertices is given in \tabref{tab:EE26BTECHXXXXX-lpp}.
+The value of $Z$ at the vertices is given in the table below.
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|}

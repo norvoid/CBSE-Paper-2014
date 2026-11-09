@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex main.idx"] 1794169984.13349 "main.idx" "main.ind" "main" 1794202685.52952 0
-  "main.idx" 1794202684.01096 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1794169984.13349 "main.idx" "main.ind" "main" 1794226618.53816 0
+  "main.idx" 1794226616.70351 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1794202682.32956 "main.tex" "main.pdf" "main" 1794202685.52974 0
+["pdflatex"] 1794226615.25038 "main.tex" "main.pdf" "main" 1794226618.53832 0
   "/etc/texmf/web2c/texmf.cnf" 1793369326.44704 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -47,7 +47,6 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1248133631 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/tfrupee/tfrupee.pfb" 1284332029 577586 052e80b1605a6cd710ee6806b090bc76 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1136849748 44729 811d6c62865936705a31c797a1d5dada ""
@@ -304,8 +303,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1793369346 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1793369389 3640045 46c1292714fe6e6617ff2979ff5fccbe ""
-  "chapters/cbse-2014.tex" 1794202446.16917 29318 3ac3f106804c493b3215286e3fd11d95 ""
-  "chapters/cbse-2014_formulae.tex" 1794202677.64797 12425 bad5e8eda85538f6f2648a71c5f9189f ""
+  "chapters/cbse-2014.tex" 1794225821.94586 31029 a18a2171fc9f2707526a03a7e9092cc3 ""
+  "chapters/cbse-2014_formulae.tex" 1794225797.94511 14190 4b89e7f089f9f87071d9bf6a63a40a18 ""
   "figs/Area_Polar.png" 1794167799 41455 4a6eefd0708150153148048030b8156a ""
   "figs/Cone_Volume.png" 1794167799 43688 cbf16b4e301d303245ee9ff0c7ca9d98 ""
   "figs/Derivative_Ratio.png" 1794167799 34141 c7a8ffb18b58075470aa31a9ece97da9 ""
@@ -315,11 +314,11 @@
   "figs/logo.jpg" 1794167799 382648 cd8c4760ef18efd0782613502d16e226 ""
   "gvv-book.sty" 1794167799 2363 72dd097fc960842e38a2d2c1f2d93726 ""
   "gvv.sty" 1794167799 4434 bde4aa22cab0cf1e9425c3111a94b6d2 ""
-  "main.aux" 1794202685.30296 4926 6239c27c99da7601428bb7a00ab70894 "pdflatex"
+  "main.aux" 1794226618.32443 5278 5f4ff3a812d8af18de72525bc20247d2 "pdflatex"
   "main.ind" 1794169984.27939 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1794202685.30396 399 2aaf44587718993820ef8ed9d9cabae3 "pdflatex"
+  "main.out" 1794226618.32543 399 2aaf44587718993820ef8ed9d9cabae3 "pdflatex"
   "main.tex" 1794168249.15415 8618 640b51a9385faf59cde1ac04379a2fa9 ""
-  "main.toc" 1794202685.30496 234 ff0efd46b3515aaa6c64d58c585f0c54 "pdflatex"
+  "main.toc" 1794226618.32543 234 ff0efd46b3515aaa6c64d58c585f0c54 "pdflatex"
   (generated)
   "main.aux"
   "main.idx"

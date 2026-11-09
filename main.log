@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.10.30)  9 NOV 2026 11:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.10.30)  9 NOV 2026 17:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1491,8 +1491,8 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
  [3]
 (./chapters/cbse-2014_formulae.tex [4
 
-] [5] [6] [7]) (./chapters/cbse-2014.tex
-[8]
+] [5] [6] [7] [8])
+(./chapters/cbse-2014.tex
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}
 ) has been already used, duplicate ignored
 <to be read again> 
@@ -1504,7 +1504,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.1.2}
 <to be read again> 
                    \relax 
 l.15 \end{align}
-                
+                 [9]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}
 ) has been already used, duplicate ignored
 <to be read again> 
@@ -1540,7 +1540,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2}
 <to be read again> 
                    \relax 
 l.68 \end{align}
-                 [9]
+                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.1}
 ) has been already used, duplicate ignored
 <to be read again> 
@@ -1552,7 +1552,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.6.1}
 <to be read again> 
                    \relax 
 l.96 \end{align}
-                
+                 [10]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1}
 ) has been already used, duplicate ignored
 <to be read again> 
@@ -1564,7 +1564,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.8.1}
 <to be read again> 
                    \relax 
 l.126 \end{align}
-                  [10]
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.9.1}
 ) has been already used, duplicate ignored
 <to be read again> 
@@ -1582,7 +1582,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.10.1
 <to be read again> 
                    \relax 
 l.159 \end{align}
-                 
+                  [11]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.10.2
 }) has been already used, duplicate ignored
 <to be read again> 
@@ -1600,13 +1600,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.11.2
 <to be read again> 
                    \relax 
 l.178 \end{align}
-                  [11]
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.12.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.196 \end{align}
-                 
+                  [12]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.13.1
 }) has been already used, duplicate ignored
 <to be read again> 
@@ -1630,8 +1630,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.14.1
 <to be read again> 
                    \relax 
 l.244 \end{align}
-                  [12]
-<figs/Derivative_Ratio.png, id=261, 578.16pt x 361.35pt>
+                  [13]
+<figs/Derivative_Ratio.png, id=278, 578.16pt x 361.35pt>
 File: figs/Derivative_Ratio.png Graphic file (type png)
 <use figs/Derivative_Ratio.png>
 Package pdftex.def Info: figs/Derivative_Ratio.png  used on input line 274.
@@ -1641,103 +1641,117 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.15.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.289 \end{align}
+l.287 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.15.2
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.289 \end{align}
-                  [13 <./figs/Derivative_Ratio.png>]
+l.292 \end{align}
+                  [14 <./figs/Derivative_Ratio.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.16.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.311 \end{align}
+l.330 \end{align}
                  
-
-LaTeX Warning: Reference `tab:EE26BTECHXXXXX-sign' on page 14 undefined on inpu
-t line 312.
-
-<figs/Increasing_Function.png, id=279, 578.16pt x 433.62pt>
+<figs/Increasing_Function.png, id=299, 578.16pt x 433.62pt>
 File: figs/Increasing_Function.png Graphic file (type png)
 <use figs/Increasing_Function.png>
-Package pdftex.def Info: figs/Increasing_Function.png  used on input line 341.
+Package pdftex.def Info: figs/Increasing_Function.png  used on input line 360.
 (pdftex.def)             Requested size: 273.14647pt x 204.86006pt.
-[14]
+ [15]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.17.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.354 \end{align}
+l.373 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.17.2
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 \end{align}
+l.377 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.17.3
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.362 \end{align}
+l.381 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.18.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.376 \end{align}
-                  [15 <./figs/Increasing_Function.png>]
+l.395 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{equation.18.2
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.399 \end{align}
+                  [16 <./figs/Increasing_Function.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.18.3
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.404 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{equation.18.4
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.408 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{equation.18.5
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.412 \end{align}
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.19.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.398 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.19.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.405 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.19.3
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.409 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.19.4
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.413 \end{align}
-                 
+l.426 \end{align}
+                  [17]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.20.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.423 \end{align}
-                  [16]
+l.460 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{equation.20.2
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.468 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{equation.20.3
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.472 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{equation.20.4
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.476 \end{align}
+                 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.21.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.453 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.21.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.461 \end{align}
-                 
-<figs/Skew_Lines.png, id=327, 578.16pt x 433.62pt>
+l.490 \end{align}
+                  [18]
+<figs/Skew_Lines.png, id=364, 578.16pt x 433.62pt>
 File: figs/Skew_Lines.png Graphic file (type png)
 <use figs/Skew_Lines.png>
-Package pdftex.def Info: figs/Skew_Lines.png  used on input line 476.
+Package pdftex.def Info: figs/Skew_Lines.png  used on input line 513.
 (pdftex.def)             Requested size: 273.14647pt x 204.86006pt.
- [17]
-Underfull \hbox (badness 2846) in paragraph at lines 489--492
+
+Underfull \hbox (badness 2846) in paragraph at lines 526--529
 \OT1/ptm/b/n/10 Solution: \OT1/ptm/m/n/10 Writ-ing the out-comes as (el-der, yo
 unger), the sam-ple space is
  []
@@ -1747,87 +1761,90 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.22.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.501 \end{align}
+l.538 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.22.2
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.501 \end{align}
-                  [18 <./figs/Skew_Lines.png>]
+l.538 \end{align}
+                  [19 <./figs/Skew_Lines.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.23.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.515 \end{align}
+l.552 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{equation.23.2
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.556 \end{align}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{equation.24.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.547 \end{align}
-                  [19]
-<figs/Cone_Volume.png, id=373, 578.16pt x 433.62pt>
+l.584 \end{align}
+                  [20]
+<figs/Cone_Volume.png, id=398, 578.16pt x 433.62pt>
 File: figs/Cone_Volume.png Graphic file (type png)
 <use figs/Cone_Volume.png>
-Package pdftex.def Info: figs/Cone_Volume.png  used on input line 564.
+Package pdftex.def Info: figs/Cone_Volume.png  used on input line 601.
 (pdftex.def)             Requested size: 273.14647pt x 204.86006pt.
- [20 <./figs/Cone_Volume.png>]
-<figs/Area_Polar.png, id=391, 505.89pt x 505.89pt>
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.25.1
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.614 \end{align}
+                  [21 <./figs/Cone_Volume.png>]
+<figs/Area_Polar.png, id=414, 505.89pt x 505.89pt>
 File: figs/Area_Polar.png Graphic file (type png)
 <use figs/Area_Polar.png>
-Package pdftex.def Info: figs/Area_Polar.png  used on input line 608.
+Package pdftex.def Info: figs/Area_Polar.png  used on input line 645.
 (pdftex.def)             Requested size: 218.5194pt x 218.52423pt.
- [21 <./figs/Area_Polar.png>]
-
-LaTeX Warning: Reference `tab:EE26BTECHXXXXX-lpp' on page 22 undefined on input
- line 659.
-
-[22]
-<figs/LPP.png, id=424, 578.16pt x 505.89pt>
+ [22 <./figs/Area_Polar.png>]
+[23]
+<figs/LPP.png, id=448, 578.16pt x 505.89pt>
 File: figs/LPP.png Graphic file (type png)
 <use figs/LPP.png>
-Package pdftex.def Info: figs/LPP.png  used on input line 683.
+Package pdftex.def Info: figs/LPP.png  used on input line 720.
 (pdftex.def)             Requested size: 273.14647pt x 239.0034pt.
- [23 <./figs/LPP.png>]) [24] (./main.aux)
+ [24 <./figs/LPP.png>]) [25] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2AAF44587718993820EF8ED9D9CABAE3;399.
  ) 
 Here is how much of TeX's memory you used:
- 54508 strings out of 467533
- 1306404 string characters out of 5422137
- 1950008 words of memory out of 5000000
- 82420 multiletter control sequences out of 15000+600000
+ 54522 strings out of 467533
+ 1306635 string characters out of 5422137
+ 1950184 words of memory out of 5000000
+ 82422 multiletter control sequences out of 15000+600000
  662449 words of font info for 109 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 109i,18n,118p,1194b,1382s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,18n,118p,1194b,1326s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tfrupee/tfrupee.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (24 pages, 960108 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tfrupee/tfrupee.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (25 pages, 958710 bytes).
 PDF statistics:
- 563 PDF objects out of 1000 (max. 8388607)
- 471 compressed objects within 5 object streams
- 233 named destinations out of 1000 (max. 500000)
+ 587 PDF objects out of 1000 (max. 8388607)
+ 496 compressed objects within 5 object streams
+ 245 named destinations out of 1000 (max. 500000)
  168 words of extra memory for PDF output out of 10000 (max. 10000000)
 

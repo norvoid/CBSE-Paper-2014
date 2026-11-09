@@ -85,7 +85,6 @@ upon substituting $\vec{B} = \vec{I}$. If $\vec{A}$ is singular, so is $\vec{AB}
 \label{eq:EE26BTECHXXXXX-det-rowop}
 \end{align}
 Also, a common factor of a row can be taken out of the determinant, and the determinant can be expanded along any row.
-\par
 \solution
 $\vec{E}$ is triangular with unit diagonal, so $\mydet{\vec{E}} = 1$. Substituting in \eqref{eq:EE26BTECHXXXXX-det-product}, we get \eqref{eq:EE26BTECHXXXXX-det-rowop}.
 \item The scalar triple product of three vectors is
@@ -147,7 +146,6 @@ is consistent, i.e.
 \label{eq:EE26BTECHXXXXX-consistent}
 \end{align}
 If $\rank\brak{\vec{M}} = 2$, the point of intersection is unique.
-\par
 \solution
 At a common point, $\vec{A}_1 + \lambda\vec{m}_1 = \vec{A}_2 + \mu\vec{m}_2$, which yields \eqref{eq:EE26BTECHXXXXX-line-isect}. This system has a solution if and only if $\vec{A}_2 - \vec{A}_1$ lies in the column space of $\vec{M}$, which is \eqref{eq:EE26BTECHXXXXX-consistent}. If the columns are independent, the solution is unique.
 \item If $\mydet{\vec{A}} \neq 0$, then $\vec{Ax} = \vec{b}$ has the unique solution
@@ -172,7 +170,6 @@ From \eqref{eq:EE26BTECHXXXXX-cond}, $\pr{E_iA} = \pr{\cond{A}{E_i}}\pr{E_i}$. S
 \begin{align}
 \pr{A} = \sum_{j=1}^{n}\pr{\cond{A}{E_j}}\pr{E_j}
 \end{align}
-\medskip
 Substituting in $\pr{\cond{E_i}{A}} = \frac{\pr{E_iA}}{\pr{A}}$ yields \eqref{eq:EE26BTECHXXXXX-bayes}.
 \item For mutually exclusive events $A$ and $B$,
 \begin{align}
@@ -199,28 +196,61 @@ For $a < b$ in $I$, by the mean value theorem there is a $\xi \in \brak{a,b}$ su
 f\brak{b} - f\brak{a} = f^{\prime}\brak{\xi}\brak{b-a}
 \end{align}
 whose sign is the sign of $f^{\prime}\brak{\xi}$.
-\item The solution of
+\item The Laplace transform of $f\brak{x}$, $x \ge 0$, is
 \begin{align}
-y^{\prime} + P\brak{x}y = Q\brak{x}
+F\brak{s} = \mathcal{L}\cbrak{f\brak{x}} = \int_{0}^{\infty} f\brak{x}e^{-sx}\, dx
+\label{eq:EE26BTECHXXXXX-laplace-def}
 \end{align}
-is
+It is linear, one-to-one, and
 \begin{align}
-y = \frac{1}{\mu}\int \mu Q\, dx, \quad \mu = e^{\int P\, dx}
-\label{eq:EE26BTECHXXXXX-ode-lin}
-\end{align}
-\solution
-Since $\mu^{\prime} = P\mu$,
-\begin{align}
-\brak{\mu y}^{\prime} = \mu y^{\prime} + P\mu y = \mu Q
-\end{align}
-Integrating yields \eqref{eq:EE26BTECHXXXXX-ode-lin}.
-\item Integration by parts.
-\begin{align}
-\int u\, dv = uv - \int v\, du
-\label{eq:EE26BTECHXXXXX-parts}
+\mathcal{L}\cbrak{f^{\prime}\brak{x}} &= sF\brak{s} - f\brak{0}
+\label{eq:EE26BTECHXXXXX-laplace-deriv}
+\\
+\mathcal{L}\cbrak{xf\brak{x}} &= -F^{\prime}\brak{s}
+\label{eq:EE26BTECHXXXXX-laplace-xmult}
 \end{align}
 \solution
-Integrating $\brak{uv}^{\prime} = u^{\prime}v + uv^{\prime}$ yields \eqref{eq:EE26BTECHXXXXX-parts}.
+Integrating by parts,
+\begin{align}
+\int_{0}^{\infty} f^{\prime}e^{-sx}\, dx = \sbrak{fe^{-sx}}_{0}^{\infty} + s\int_{0}^{\infty} fe^{-sx}\, dx = -f\brak{0} + sF\brak{s}
+\end{align}
+yielding \eqref{eq:EE26BTECHXXXXX-laplace-deriv}. Differentiating \eqref{eq:EE26BTECHXXXXX-laplace-def} with respect to $s$,
+\begin{align}
+F^{\prime}\brak{s} = \int_{0}^{\infty} \brak{-x}f\brak{x}e^{-sx}\, dx
+\end{align}
+which is \eqref{eq:EE26BTECHXXXXX-laplace-xmult}.
+\item Standard transforms, for $s > a$,
+\begin{align}
+\mathcal{L}\cbrak{1} = \frac{1}{s}, \quad
+\mathcal{L}\cbrak{e^{ax}} = \frac{1}{s-a}, \quad
+\mathcal{L}\cbrak{xe^{ax}} = \frac{1}{\brak{s-a}^2}
+\label{eq:EE26BTECHXXXXX-laplace-table}
+\\
+\mathcal{L}\cbrak{\ln x} = -\frac{\gamma + \ln s}{s}
+\label{eq:EE26BTECHXXXXX-laplace-ln}
+\end{align}
+where $\gamma$ is Euler's constant.
+\solution
+Since $\int_{0}^{\infty} e^{-\brak{s-a}x}\, dx = \frac{1}{s-a}$, the first two follow. From \eqref{eq:EE26BTECHXXXXX-laplace-xmult},
+\begin{align}
+\mathcal{L}\cbrak{xe^{ax}} = -\frac{d}{ds}\brak{\frac{1}{s-a}} = \frac{1}{\brak{s-a}^2}
+\end{align}
+For $b > -1$, substituting $u = sx$,
+\begin{align}
+\mathcal{L}\cbrak{x^b} = \int_{0}^{\infty} x^be^{-sx}\, dx = \frac{1}{s^{b+1}}\int_{0}^{\infty} u^be^{-u}\, du = \frac{\Gamma\brak{b+1}}{s^{b+1}}
+\end{align}
+Differentiating with respect to $b$ at $b = 0$, using $\Gamma\brak{1} = 1$ and $\Gamma^{\prime}\brak{1} = -\gamma$,
+\begin{align}
+\mathcal{L}\cbrak{\ln x} = \frac{\Gamma^{\prime}\brak{1} - \Gamma\brak{1}\ln s}{s}
+\end{align}
+yielding \eqref{eq:EE26BTECHXXXXX-laplace-ln}.
+\item For $\abs{x} < 1$, the substitution $x = \tanh t$ gives
+\begin{align}
+\frac{dx}{dt} = 1 - x^2, \quad t = \frac{1}{2}\ln\frac{1+x}{1-x}
+\label{eq:EE26BTECHXXXXX-tanh-sub}
+\end{align}
+\solution
+Since $\frac{d}{dt}\tanh t = 1 - \tanh^2 t$, the first result follows. Solving $x = \frac{e^{2t}-1}{e^{2t}+1}$ for $e^{2t}$ gives $e^{2t} = \frac{1+x}{1-x}$.
 \item Standard integrals.
 \begin{align}
 \int x^n\, dx &= \frac{x^{n+1}}{n+1} + C, \quad n \neq -1
