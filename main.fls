@@ -613,6 +613,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT ./chapters/cbse-2014.tex
 INPUT ./chapters/cbse-2014.tex
 INPUT chapters/cbse-2014.tex
+INPUT ./figs/Inverse_Cos.png
+INPUT ./figs/Inverse_Cos.png
+INPUT ./figs/Inverse_Cos.png
+INPUT ./figs/Inverse_Cos.png
+INPUT ./figs/Inverse_Cos.png
 INPUT ./figs/Derivative_Ratio.png
 INPUT ./figs/Derivative_Ratio.png
 INPUT ./figs/Derivative_Ratio.png
