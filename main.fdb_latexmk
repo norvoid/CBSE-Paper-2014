@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex main.idx"] 1794169984.13349 "main.idx" "main.ind" "main" 1794231766.31417 0
-  "main.idx" 1794231763.8927 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1794169984.13349 "main.idx" "main.ind" "main" 1794478319.72281 0
+  "main.idx" 1794478317.27039 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1794231761.84963 "main.tex" "main.pdf" "main" 1794231766.31435 0
+["pdflatex"] 1794478315.88678 "main.tex" "main.pdf" "main" 1794478319.723 0
   "/etc/texmf/web2c/texmf.cnf" 1793369326.44704 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -303,23 +303,24 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1793369346 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1793369389 3640045 46c1292714fe6e6617ff2979ff5fccbe ""
-  "chapters/cbse-2014.tex" 1794231611.48394 31619 9e9521e7bc8abe38a843939ded586a2d ""
-  "chapters/cbse-2014_formulae.tex" 1794229178.30984 14190 5eaf050d2970a0ce80ce7a08998f5c6a ""
+  "chapters/cbse-2014.tex" 1794478308.61539 31996 c4009f8eb55111c8ea359257b414537b ""
+  "chapters/cbse-2014_formulae.tex" 1794477183.31586 14205 8fc0fb724e664ed9ed78abb788040bb8 ""
   "figs/Area_Polar.png" 1794167799 41455 4a6eefd0708150153148048030b8156a ""
   "figs/Cone_Volume.png" 1794167799 43688 cbf16b4e301d303245ee9ff0c7ca9d98 ""
   "figs/Derivative_Ratio.png" 1794167799 34141 c7a8ffb18b58075470aa31a9ece97da9 ""
   "figs/Increasing_Function.png" 1794167799 62268 d65d67570f39ad340e36e60a1617294e ""
-  "figs/Inverse_Cos.png" 1794230524.64242 138208 df2cf7ba7b12da41bc261b16d1723eb3 ""
+  "figs/Inverse_Cos.png" 1794426860.43476 143435 7244c52ae724b4271d82fa32b7b5a3e8 ""
   "figs/LPP.png" 1794167799 74985 693cac3299579040ca689b4bb18221c1 ""
   "figs/Skew_Lines.png" 1794167799 94351 d593a935348afe007b9ad68fd10345c6 ""
+  "figs/Vectors_Angle.png" 1794477958.11453 379477 86f00b2020be0ec412e508acfb00cb65 ""
   "figs/logo.jpg" 1794167799 382648 cd8c4760ef18efd0782613502d16e226 ""
   "gvv-book.sty" 1794167799 2363 72dd097fc960842e38a2d2c1f2d93726 ""
   "gvv.sty" 1794167799 4434 bde4aa22cab0cf1e9425c3111a94b6d2 ""
-  "main.aux" 1794231766.0727 5637 c1bb410bc264df7cf94850bd170d9145 "pdflatex"
+  "main.aux" 1794478319.49339 5891 817ca9aa07e201756cabf5422df976a7 "pdflatex"
   "main.ind" 1794169984.27939 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1794231766.0737 399 2aaf44587718993820ef8ed9d9cabae3 "pdflatex"
-  "main.tex" 1794168249.15415 8618 640b51a9385faf59cde1ac04379a2fa9 ""
-  "main.toc" 1794231766.0737 234 ff0efd46b3515aaa6c64d58c585f0c54 "pdflatex"
+  "main.out" 1794478319.49439 399 2aaf44587718993820ef8ed9d9cabae3 "pdflatex"
+  "main.tex" 1794422273.57096 2723 9b19580eed742633f5e519a464690a8d ""
+  "main.toc" 1794478319.49539 234 ff0efd46b3515aaa6c64d58c585f0c54 "pdflatex"
   (generated)
   "main.aux"
   "main.idx"

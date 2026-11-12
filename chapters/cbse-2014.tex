@@ -33,15 +33,15 @@ From \eqref{eq:EE26BTECH11203-arcsin-comp}, $\cos^{-1}x = \frac{\pi}{2} - \sin^{
 \end{align}
 The following code computes $\sin\brak{\sin^{-1}\frac{1}{5} + \cos^{-1}x} = 1$ and generates \figref{fig:EE26BTECH11203-Inverse_Cos}.
 
- \figref{fig:EE26BTECH11203-Inverse_Cos}.
+ \figref{fig:EE26BTECH11203-Inverse_Cos}.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Inverse\_Cos.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Inverse_Cos.png}
-    \caption{Plot of $\sin\brak{\sin^{-1}\frac{1}{5} + \cos^{-1}x} = 1$}
-    \label{fig:EE26BTECH11203-Inverse_Cos}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/Inverse_Cos.png}
+    \caption{Plot of $\sin\brak{\sin^{-1}\frac{1}{5} + \cos^{-1}x} = 1$}
+    \label{fig:EE26BTECH11203-Inverse_Cos}
 \end{figure}
 
 
@@ -74,11 +74,14 @@ Multiplying the row vector with the matrix,
 \begin{align}
 \myvec{x & 1}\myvec{1 & 0 \\ -2 & 0} = \myvec{x - 2 & 0} = \myvec{0 & 0}
 \end{align}
-Transposing, this is the system
 \begin{align}
-\myvec{1 & -2 \\ 0 & 0}\myvec{x \\ 1} = \myvec{0 \\ 0}
 \implies x = 2
 \end{align}
+The following code verifies the solution.
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Matrix\_Equation\_2.py}@*)
+\end{lstlisting}
+
 
 \item
 If $\mydet{2x & 5 \\ 8 & x} = \mydet{6 & -2 \\ 7 & 3}$, write the value of $x$.
@@ -109,19 +112,13 @@ From the standard integral of $x^n$ in \eqref{eq:EE26BTECH11203-stdint},
 \end{align}
 
 \item
-Evaluate : $\displaystyle\int_{0} \frac{dx}{9 + x^2}$
+Evaluate : $\displaystyle\int \frac{dx}{9 + x^2}$
 \par
 \medskip
 \solution
-The upper limit is not printed in the question paper and is taken as $\infty$. From \eqref{eq:EE26BTECH11203-stdint} with $a = 3$,
+From \eqref{eq:EE26BTECH11203-stdint} with $a = 3$,
 \begin{align}
 \int \frac{dx}{9 + x^2} = \frac{1}{3}\tan^{-1}\frac{x}{3} + C
-\end{align}
-Hence
-\begin{align}
-\int_{0}^{\infty} \frac{dx}{9 + x^2}
-= \frac{1}{3}\sbrak{\tan^{-1}\frac{x}{3}}_{0}^{\infty}
-= \frac{1}{3}\cdot\frac{\pi}{2} = \frac{\pi}{6}
 \end{align}
 The following code verifies the solution.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
@@ -160,6 +157,18 @@ Then
 \cos\theta = \frac{\vec{a}^{\top}\vec{b}}{\norm{\vec{a}}\norm{\vec{b}}} = -\frac{1}{2}
 \implies \theta = \frac{2\pi}{3}
 \end{align}
+The following code verifies the solution.
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Vectors\_Angle.py}@*)
+\end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/Vectors_Angle.png}
+    \caption{Plot of $\frac{du}{dv}$}
+    \label{fig:EE26BTECH11203-angle}
+\end{figure}
+
+
 
 \item
 Write the vector equation of the plane, passing through the point $\brak{a, b, c}$ and parallel to the plane $\vec{r}\cdot\brak{\hat{i}+\hat{j}+\hat{k}} = 2$.
@@ -283,10 +292,10 @@ The following code computes $\frac{du}{dv}$ symbolically from the definitions an
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Derivative\_Ratio.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Derivative_Ratio.png}
-    \caption{Plot of $\frac{du}{dv}$}
-    \label{fig:EE26BTECH11203-ratio}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/Derivative_Ratio.png}
+    \caption{Plot of $\frac{du}{dv}$}
+    \label{fig:EE26BTECH11203-ratio}
 \end{figure}
 
 \item
@@ -369,10 +378,10 @@ The following code verifies the solution and generates \figref{fig:EE26BTECH1120
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Increasing\_Function.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Increasing_Function.png}
-    \caption{Intervals of increase and decrease}
-    \label{fig:EE26BTECH11203-incr}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/Increasing_Function.png}
+    \caption{Intervals of increase and decrease}
+    \label{fig:EE26BTECH11203-incr}
 \end{figure}
 
 \item
@@ -522,10 +531,10 @@ The following code verifies the solution and generates \figref{fig:EE26BTECH1120
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Skew\_Lines.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Skew_Lines.png}
-    \caption{Intersecting lines}
-    \label{fig:EE26BTECH11203-skew}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/Skew_Lines.png}
+    \caption{Intersecting lines}
+    \label{fig:EE26BTECH11203-skew}
 \end{figure}
 
 \item
@@ -610,10 +619,10 @@ The maximum volume is $\frac{2\pi l^3}{9\sqrt{3}}$. The following code plots $V$
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Cone\_Volume.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Cone_Volume.png}
-    \caption{Volume of the cone versus $\alpha$}
-    \label{fig:EE26BTECH11203-cone}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/Cone_Volume.png}
+    \caption{Volume of the cone versus $\alpha$}
+    \label{fig:EE26BTECH11203-cone}
 \end{figure}
 
 \item
@@ -654,10 +663,10 @@ The following code computes the area and generates \figref{fig:EE26BTECH11203-ar
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Area\_Polar.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\linewidth]{figs/Area_Polar.png}
-    \caption{Region enclosed by the $x$-axis, $y=x$ and the circle}
-    \label{fig:EE26BTECH11203-area}
+    \centering
+    \includegraphics[width=0.60\linewidth]{figs/Area_Polar.png}
+    \caption{Region enclosed by the $x$-axis, $y=x$ and the circle}
+    \label{fig:EE26BTECH11203-area}
 \end{figure}
 
 \item
@@ -729,10 +738,10 @@ From \eqref{eq:EE26BTECH11203-corner}, the maximum profit is \rupee{} 392, when 
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/LPP.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/LPP.png}
-    \caption{Feasible region and the optimal vertex}
-    \label{fig:EE26BTECH11203-lpp}
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/LPP.png}
+    \caption{Feasible region and the optimal vertex}
+    \label{fig:EE26BTECH11203-lpp}
 \end{figure}
 
 \item

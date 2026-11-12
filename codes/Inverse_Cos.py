@@ -24,7 +24,7 @@ plt.axvline(x=0.2, color='green', linestyle=':', label='Solution ($x = 0.2$ or $
 
 plt.title('Verification of Inverse Trigonometric Equation')
 plt.xlabel('x')
-plt.ylabel('LHS Expression')
+plt.ylabel(r'$\sin\left(\sin^{-1}\left(\frac{1}{5}\right) + \cos^{-1}(x)\right)$')
 plt.grid(True)
 plt.legend()
 
