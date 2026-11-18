@@ -1,772 +1,514 @@
-\begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
-\item
-Let $*$ be a binary operation on the set of all non-zero real numbers, given by $a * b = \frac{ab}{5}$ for all $a, b \in \mathbb{R}-\cbrak{0}$. Find the value of $x$, given that $2 * \brak{x * 5} = 10$.
-\par
-\medskip
-\solution
-From \eqref{eq:EE26BTECH11203-star} with $k = 5$, $\phi\brak{a} = \frac{a}{5}$ and
-\begin{align}
-\phi\brak{2 * \brak{x * 5}} = \phi\brak{2}\phi\brak{x}\phi\brak{5}
-= \frac{2}{5}\cdot\frac{x}{5}\cdot 1 = \frac{2x}{25}
-\end{align}
-from \eqref{eq:EE26BTECH11203-star-phi}. Also, $\phi\brak{10} = 2$. Equating,
-\begin{align}
-\frac{2x}{25} = 2 \implies x = 25
-\end{align}
-The following code verifies the solution.
+\begin{enumerate}[label={},font=\normalfont,leftmargin=1.15cm,labelwidth=1.0cm,labelsep=0.15cm,itemindent=0pt,listparindent=0pt,itemsep=\baselineskip,parsep=0pt,topsep=0pt]
+\item[1.2.1] Solve the following matrix equation for $x$ :, $[x\ \ 1]\begin{bmatrix}1&0\\-2&0\end{bmatrix}=\mathrm{O}$.\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+Using (\ref{formula-1-1-1}) with $x_1=x$, $x_2=1$ and the rows $\vec{r}_1=\begin{bmatrix}1&0\end{bmatrix}$, $\vec{r}_2=\begin{bmatrix}-2&0\end{bmatrix}$ of $\vec{B}=\begin{bmatrix}1&0\\-2&0\end{bmatrix}$,
+\[
+\begin{bmatrix}x&1\end{bmatrix}\vec{B}=x\vec{r}_1+\vec{r}_2=\begin{bmatrix}x-2&0\end{bmatrix}=\begin{bmatrix}0&0\end{bmatrix}\implies\boxed{x=2}.
+\]
+The Python code verifies the product.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Binary\_Operation.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.1.py}@*)
 \end{lstlisting}
 
-\item
-If $\sin\brak{\sin^{-1}\frac{1}{5} + \cos^{-1}x} = 1$, then find the value of $x$.
-\par
-\medskip
-\solution
-Since $\sin^{-1}\frac{1}{5} \in \brak{0,\frac{\pi}{2}}$ and $\cos^{-1}x \in \sbrak{0,\pi}$, the argument of $\sin$ lies in $\sbrak{0,\frac{3\pi}{2}}$, where $\sin\theta = 1$ only for $\theta = \frac{\pi}{2}$. So
-\begin{align}
-\sin^{-1}\frac{1}{5} + \cos^{-1}x = \frac{\pi}{2}
-\end{align}
-From \eqref{eq:EE26BTECH11203-arcsin-comp}, $\cos^{-1}x = \frac{\pi}{2} - \sin^{-1}x$. Hence
-\begin{align}
-\sin^{-1}\frac{1}{5} = \sin^{-1}x \implies x = \frac{1}{5}
-\end{align}
-The following code computes $\sin\brak{\sin^{-1}\frac{1}{5} + \cos^{-1}x} = 1$ and generates \figref{fig:EE26BTECH11203-Inverse_Cos}.
+\item[1.2.2] If $\begin{vmatrix}2x&5\\8&x\end{vmatrix}=\begin{vmatrix}6&-2\\7&3\end{vmatrix}$, write the value of $x$.\nobreak\hfill\mbox{(12,2014)}
 
- \figref{fig:EE26BTECH11203-Inverse_Cos}.
+
+
+\vspace{0.6em}\par\solution
+
+Evaluating both determinants gives $2x^2-40=32$. Using (\ref{formula-1-1-2}) with $f(x)=2x^2-72$ and $f^{\prime}(x)=4x$,
+\[
+x_{n+1}=x_n-\frac{2x_n^2-72}{4x_n},\qquad x_n\ne0.
+\]
+Starting from $x_0=2$, the iteration converges to $x=6$; starting from $x_0=-8$, it converges to $x=-6$. Factorization independently confirms the result:
+\[
+2x^2-72=2(x-6)(x+6)=0.
+\]
+Hence $\boxed{x=\pm6}$, which agrees with the Newton--Raphson values.
+
+The C program applies Newton--Raphson from both starting values and verifies the roots:
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Inverse\_Cos.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.2.c}@*)
 \end{lstlisting}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Inverse_Cos.png}
-    \caption{Plot of $\sin\brak{\sin^{-1}\frac{1}{5} + \cos^{-1}x} = 1$}
-    \label{fig:EE26BTECH11203-Inverse_Cos}
-\end{figure}
-
-
-\item
-If $2\myvec{3 & 4 \\ 5 & x} + \myvec{1 & y \\ 0 & 1} = \myvec{7 & 0 \\ 10 & 5}$, find $\brak{x-y}$.
-\par
-\medskip
-\solution
-Equating the corresponding entries on both sides, the entries $7 = 7$ and $10 = 10$ hold identically, while
-\begin{align}
-2x + 1 = 5, \quad 8 + y = 0
-\implies
-\myvec{2 & 0 \\ 0 & 1}\myvec{x \\ y} = \myvec{4 \\ -8}
-\end{align}
-yielding
-\begin{align}
-\myvec{x \\ y} = \myvec{2 \\ -8} \implies x - y = 10
-\end{align}
-The following code verifies the solution.
+The Python program plots the two curves and marks their intersections:
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Matrix\_Equation.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.2.py}@*)
 \end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.2.png}\caption{Intersections of $y=2x^2-40$ and $y=32$, corresponding to roots $x=-6$ and $x=6$.}\end{figure}
 
-\item
-Solve the following matrix equation for $x$: $\myvec{x & 1}\myvec{1 & 0 \\ -2 & 0} = \vec{O}$.
-\par
-\medskip
-\solution
-Multiplying the row vector with the matrix,
-\begin{align}
-\myvec{x & 1}\myvec{1 & 0 \\ -2 & 0} = \myvec{x - 2 & 0} = \myvec{0 & 0}
-\end{align}
-\begin{align}
-\implies x = 2
-\end{align}
-The following code verifies the solution.
+\item[1.2.3] Find the projection of the vector $\hat{i}+3\hat{j}+7\hat{k}$ on the vector $2\hat{i}-3\hat{j}+6\hat{k}$.\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+In column form, $\vec{a}=\begin{bmatrix}1\\3\\7\end{bmatrix}$ and $\vec{b}=\begin{bmatrix}2\\-3\\6\end{bmatrix}$. Using (\ref{formula-1-1-3}),
+\[
+\frac{\vec{a}^{\top}\vec{b}}{\|\vec{b}\|}=\frac{2-9+42}{\sqrt{4+9+36}}=\frac{35}{7}=\boxed{5}.
+\]
+The Python program draws $\vec{a}$, $\vec{b}$ and the projection vector $\frac{5}{7}\vec{b}$:
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Matrix\_Equation\_2.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.3.py}@*)
 \end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.3.png}\caption{Projection of $\vec{a}$ on $\vec{b}$.}\end{figure}
 
-
-\item
-If $\mydet{2x & 5 \\ 8 & x} = \mydet{6 & -2 \\ 7 & 3}$, write the value of $x$.
-\par
-\medskip
-\solution
-Evaluating both determinants,
-\begin{align}
-2x^2 - 40 = 18 + 14 = 32
-\implies x^2 = 36
-\implies x = \pm 6
-\end{align}
-The following code verifies the solution.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Determinant\_Equation.py}@*)
-\end{lstlisting}
-
-\item
-Write the antiderivative of $\brak{3\sqrt{x} + \frac{1}{\sqrt{x}}}$.
-\par
-\medskip
-\solution
-From the standard integral of $x^n$ in \eqref{eq:EE26BTECH11203-stdint},
-\begin{align}
-\int \brak{3x^{\frac{1}{2}} + x^{-\frac{1}{2}}}\, dx
-= 3\cdot\frac{2}{3}x^{\frac{3}{2}} + 2x^{\frac{1}{2}} + C
-= 2\sqrt{x}\brak{x+1} + C
-\end{align}
-
-\item
-Evaluate : $\displaystyle\int \frac{dx}{9 + x^2}$
-\par
-\medskip
-\solution
-From \eqref{eq:EE26BTECH11203-stdint} with $a = 3$,
-\begin{align}
-\int \frac{dx}{9 + x^2} = \frac{1}{3}\tan^{-1}\frac{x}{3} + C
-\end{align}
-The following code verifies the solution.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Arctan\_Integral.py}@*)
-\end{lstlisting}
-
-\item
-Find the projection of the vector $\hat{i} + 3\hat{j} + 7\hat{k}$ on the vector $2\hat{i} - 3\hat{j} + 6\hat{k}$.
-\par
-\medskip
-\solution
-Let
-\begin{align}
-\vec{a} = \myvec{1 \\ 3 \\ 7}, \quad \vec{b} = \myvec{2 \\ -3 \\ 6}
-\end{align}
-Then $\vec{a}^{\top}\vec{b} = 2 - 9 + 42 = 35$ and $\norm{\vec{b}} = \sqrt{4 + 9 + 36} = 7$. From \eqref{eq:EE26BTECH11203-proj}, the projection is
-\begin{align}
-\frac{\vec{a}^{\top}\vec{b}}{\norm{\vec{b}}} = \frac{35}{7} = 5
-\end{align}
-The following code verifies the solution.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Projection.py}@*)
-\end{lstlisting}
-
-\item
-If $\vec{a}$ and $\vec{b}$ are two unit vectors such that $\vec{a} + \vec{b}$ is also a unit vector, then find the angle between $\vec{a}$ and $\vec{b}$.
-\par
-\medskip
-\solution
-Given $\norm{\vec{a}} = \norm{\vec{b}} = \norm{\vec{a}+\vec{b}} = 1$, from \eqref{eq:EE26BTECH11203-angle},
-\begin{align}
-1 = 1 + 2\vec{a}^{\top}\vec{b} + 1 \implies \vec{a}^{\top}\vec{b} = -\frac{1}{2}
-\end{align}
-Then
-\begin{align}
-\cos\theta = \frac{\vec{a}^{\top}\vec{b}}{\norm{\vec{a}}\norm{\vec{b}}} = -\frac{1}{2}
-\implies \theta = \frac{2\pi}{3}
-\end{align}
-The following code verifies the solution.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Vectors\_Angle.py}@*)
-\end{lstlisting}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Vectors_Angle.png}
-    \caption{Plot of $\frac{du}{dv}$}
-    \label{fig:EE26BTECH11203-angle}
-\end{figure}
+\item[1.2.4] If $\vec{a}$ and $\vec{b}$ are two unit vectors such that $\vec{a}+\vec{b}$ is also a unit vector, then find the angle between $\vec{a}$ and $\vec{b}$.\nobreak\hfill\mbox{(12,2014)}
 
 
 
-\item
-Write the vector equation of the plane, passing through the point $\brak{a, b, c}$ and parallel to the plane $\vec{r}\cdot\brak{\hat{i}+\hat{j}+\hat{k}} = 2$.
-\par
-\medskip
-\solution
-The given plane is $\vec{n}^{\top}\vec{x} = 2$ in \eqref{eq:EE26BTECH11203-plane}, with
-\begin{align}
-\vec{n} = \myvec{1 \\ 1 \\ 1}
-\end{align}
-A parallel plane has the same normal vector. It passes through $\vec{P}_0 = \myvec{a \\ b \\ c}$, so from \eqref{eq:EE26BTECH11203-plane},
-\begin{align}
-\vec{n}^{\top}\vec{x} = \vec{n}^{\top}\vec{P}_0
-\implies \vec{r}\cdot\brak{\hat{i}+\hat{j}+\hat{k}} = a + b + c
-\end{align}
+\vspace{0.6em}\par\solution
 
-\item
-Let $A = \cbrak{1, 2, 3, \dots, 9}$ and $R$ be the relation in $A \times A$ defined by $\brak{a, b} R \brak{c, d}$ if $a + d = b + c$ for $\brak{a, b}, \brak{c, d}$ in $A \times A$. Prove that $R$ is an equivalence relation. Also obtain the equivalence class $\sbrak{\brak{2, 5}}$.
-\par
-\medskip
-\solution
-Let
-\begin{align}
-\vec{x} = \myvec{a \\ b}, \quad \vec{y} = \myvec{c \\ d}, \quad \vec{w} = \myvec{1 \\ -1}
-\end{align}
-Then $a + d = b + c$ is the same as $a - b = c - d$, or
-\begin{align}
-\vec{w}^{\top}\vec{x} = \vec{w}^{\top}\vec{y}
-\end{align}
-This is \eqref{eq:EE26BTECH11203-kernel-rel} with $\phi\brak{\vec{x}} = \vec{w}^{\top}\vec{x}$. Hence $R$ is reflexive, symmetric and transitive, i.e., an equivalence relation. The equivalence class of $\vec{x} = \myvec{2 \\ 5}$ is the set of points of $A \times A$ with $\vec{w}^{\top}\vec{y} = -3$, i.e. $d = c + 3$:
-\begin{align}
-\sbrak{\brak{2,5}} = \cbrak{\brak{1,4}, \brak{2,5}, \brak{3,6}, \brak{4,7}, \brak{5,8}, \brak{6,9}}
-\end{align}
-The following code verifies the solution.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Equivalence\_Relation.py}@*)
-\end{lstlisting}
-
-\item
-Prove that $\cot^{-1}\brak{\dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}} = \dfrac{x}{2}; \, x \in \brak{0,\dfrac{\pi}{4}}$.
-\par
-\medskip
-\solution
-Let $c = \cos\frac{x}{2}$ and $s = \sin\frac{x}{2}$. For $x \in \brak{0,\frac{\pi}{4}}$, $\frac{x}{2} \in \brak{0,\frac{\pi}{8}}$, so $c > s > 0$. From \eqref{eq:EE26BTECH11203-half-angle},
-\begin{align}
-\sqrt{1+\sin x} = c + s, \quad \sqrt{1-\sin x} = c - s
-\end{align}
-The argument of $\cot^{-1}$ becomes
-\begin{align}
-\frac{\brak{c+s} + \brak{c-s}}{\brak{c+s} - \brak{c-s}} = \frac{2c}{2s} = \cot\frac{x}{2}
-\end{align}
-Since $\frac{x}{2} \in \brak{0,\pi}$, from \eqref{eq:EE26BTECH11203-pv-cot},
-\begin{align}
-\cot^{-1}\brak{\cot\frac{x}{2}} = \frac{x}{2}
-\end{align}
-The following code verifies the solution.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Inverse\_Trig.py}@*)
-\end{lstlisting}
-
-\item
-Using properties of determinants, prove that
-\begin{align}
-\mydet{2y & y-z-x & 2y \\ 2z & 2z & z-x-y \\ x-y-z & 2x & 2x} = \brak{x+y+z}^3
-\end{align}
-\par
-\medskip
-\solution
-Let $s = x + y + z$ and let $\Delta$ be the determinant on the left hand side. Adding rows 2 and 3 to row 1 ($R_1 \to R_1 + R_2 + R_3$), from \eqref{eq:EE26BTECH11203-det-rowop},
-\begin{align}
-\Delta = \mydet{s & s & s \\ 2z & 2z & z-x-y \\ x-y-z & 2x & 2x}
-= s\mydet{1 & 1 & 1 \\ 2z & 2z & z-x-y \\ x-y-z & 2x & 2x}
-\end{align}
-Applying $C_2 \to C_2 - C_1$ and $C_3 \to C_3 - C_1$,
-\begin{align}
-\Delta = s\mydet{1 & 0 & 0 \\ 2z & 0 & -s \\ x-y-z & s & s}
-\end{align}
-Expanding along the first row,
-\begin{align}
-\Delta = s\brak{0\cdot s - \brak{-s}\brak{s}} = s\cdot s^2 = \brak{x+y+z}^3
-\end{align}
-The following code verifies the solution.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Determinant\_Identity.py}@*)
-\end{lstlisting}
-
-\item
-Differentiate $\tan^{-1}\brak{\dfrac{\sqrt{1-x^2}}{x}}$ with respect to $\cos^{-1}\brak{2x\sqrt{1-x^2}}$, when $x \neq 0$.
-\par
-\medskip
-\solution
-Let
-\begin{align}
-u = \tan^{-1}\brak{\frac{\sqrt{1-x^2}}{x}}, \quad v = \cos^{-1}\brak{2x\sqrt{1-x^2}}
-\end{align}
-Substituting $x = \cos\theta$, $\theta \in \brak{0,\pi}$, $\theta \neq \frac{\pi}{2}$, we have $\sqrt{1-x^2} = \sin\theta$. Then
-\begin{align}
-u = \tan^{-1}\brak{\tan\theta}, \quad v = \cos^{-1}\brak{\sin 2\theta} = \cos^{-1}\sbrak{\cos\brak{\frac{\pi}{2} - 2\theta}}
-\end{align}
-From \eqref{eq:EE26BTECH11203-pv-cot} and the principal value of $\cos^{-1}$, $\sbrak{0,\pi}$,
-\begin{align}
-\frac{du}{d\theta} = 1, \quad
-\frac{dv}{d\theta} =
-\begin{cases}
--2 & \theta \in \brak{0,\frac{\pi}{4}} \cup \brak{\frac{3\pi}{4},\pi}
-\\
-2 & \theta \in \brak{\frac{\pi}{4},\frac{\pi}{2}} \cup \brak{\frac{\pi}{2},\frac{3\pi}{4}}
-\end{cases}
-\end{align}
-By the chain rule,
-\begin{align}
-\frac{du}{dv} = \frac{du/d\theta}{dv/d\theta} =
-\begin{cases}
--\dfrac{1}{2} & \dfrac{1}{\sqrt{2}} < \abs{x} < 1
-\\[2mm]
-\dfrac{1}{2} & 0 < \abs{x} < \dfrac{1}{\sqrt{2}}
-\end{cases}
-\end{align}
-The following code computes $\frac{du}{dv}$ symbolically from the definitions and generates \figref{fig:EE26BTECH11203-ratio}.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Derivative\_Ratio.py}@*)
-\end{lstlisting}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Derivative_Ratio.png}
-    \caption{Plot of $\frac{du}{dv}$}
-    \label{fig:EE26BTECH11203-ratio}
-\end{figure}
-
-\item
-If $y = x^x$, prove that $\dfrac{d^2y}{dx^2} - \dfrac{1}{y}\brak{\dfrac{dy}{dx}}^2 - \dfrac{y}{x} = 0$.
-\par
-\medskip
-\solution
-For $x > 0$, $y > 0$ and $\ln y = x\ln x$. Let $f = \brak{\ln y}^{\prime}$, so that
-\begin{align}
-f = \brak{x\ln x}^{\prime} = 1 + \ln x
-\end{align}
-From \eqref{eq:EE26BTECH11203-laplace-table} and \eqref{eq:EE26BTECH11203-laplace-ln},
-\begin{align}
-F\brak{s} = \mathcal{L}\cbrak{1 + \ln x} = \frac{1}{s} - \frac{\gamma + \ln s}{s}
-\implies sF\brak{s} = 1 - \gamma - \ln s
-\end{align}
-Let $g = xf = x + x\ln x$. Then $g\brak{0} = 0$, $g^{\prime} = f + xf^{\prime}$ and, from \eqref{eq:EE26BTECH11203-laplace-xmult}, $G\brak{s} = -F^{\prime}\brak{s}$. Using \eqref{eq:EE26BTECH11203-laplace-deriv},
-\begin{align}
-\mathcal{L}\cbrak{f + xf^{\prime}} = sG\brak{s} - g\brak{0} = -sF^{\prime}\brak{s}
-\end{align}
-yielding
-\begin{align}
-\mathcal{L}\cbrak{xf^{\prime}} = -sF^{\prime}\brak{s} - F\brak{s} = -\brak{sF\brak{s}}^{\prime} = \frac{1}{s}
-\end{align}
-Since $\frac{1}{s} = \mathcal{L}\cbrak{1}$ and the transform is one-to-one, $xf^{\prime} = 1$, i.e.
-\begin{align}
-\brak{\ln y}^{\prime\prime} = f^{\prime} = \frac{1}{x}
-\end{align}
-From \eqref{eq:EE26BTECH11203-logder},
-\begin{align}
-\frac{y^{\prime\prime}}{y} - \brak{\frac{y^{\prime}}{y}}^2 = \frac{1}{x}
-\end{align}
-Multiplying by $y$,
-\begin{align}
-y^{\prime\prime} - \frac{\brak{y^{\prime}}^2}{y} - \frac{y}{x} = 0
-\end{align}
-The following code verifies the solution.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Log\_Derivative.py}@*)
-\end{lstlisting}
-
-\item
-Find the intervals in which the function $f\brak{x} = 3x^4 - 4x^3 - 12x^2 + 5$ is
-\begin{enumerate}
-\item strictly increasing
-\item strictly decreasing
+Using (\ref{formula-1-1-3}) with $\|\vec{a}\|=\|\vec{b}\|=\|\vec{a}+\vec{b}\|=1$,
+\[
+1=1+2\vec{a}^{\top}\vec{b}+1\implies\cos\theta=\frac{\vec{a}^{\top}\vec{b}}{1\cdot1}=-\frac{1}{2}\implies\boxed{\theta=\frac{2\pi}{3}}.
+\]
+The Python program draws one configuration of the vectors. Generate the plotted points from the minimum independent coordinate choice:
+\begin{enumerate}[label=\arabic*),leftmargin=1.2cm,itemsep=0pt,topsep=2pt]
+\item Place $\vec{a}=\begin{bmatrix}1\\0\end{bmatrix}$ along the $x$-axis and let $\vec{b}=\begin{bmatrix}b_1\\b_2\end{bmatrix}$.
+\item $\vec{a}^{\top}\vec{b}=b_1=-\frac{1}{2}$, and $\|\vec{b}\|=1$ gives $b_2=\frac{\sqrt3}{2}$.
+\item Then $\vec{a}+\vec{b}=\begin{bmatrix}\frac{1}{2}\\\frac{\sqrt3}{2}\end{bmatrix}$, which is a unit vector.
 \end{enumerate}
-\par
-\medskip
-\solution
-Differentiating,
-\begin{align}
-f^{\prime}\brak{x} = 12x^3 - 12x^2 - 24x = 12x\brak{x-2}\brak{x+1}
-\end{align}
-The critical points are $x = -1, 0, 2$. The sign of $f^{\prime}$ on each interval is given in the table below.
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|}
-\hline
-Interval & Sign of $f^{\prime}\brak{x}$ & Nature of $f$ \\
-\hline
-$\brak{-\infty,-1}$ & $-$ & decreasing \\
-\hline
-$\brak{-1,0}$ & $+$ & increasing \\
-\hline
-$\brak{0,2}$ & $-$ & decreasing \\
-\hline
-$\brak{2,\infty}$ & $+$ & increasing \\
-\hline
-\end{tabular}
-\caption{Sign of $f^{\prime}$}
-\end{table}
-From \eqref{eq:EE26BTECH11203-monotone}, $f$ is
-\begin{enumerate}
-\item strictly increasing on $\brak{-1,0} \cup \brak{2,\infty}$
-\item strictly decreasing on $\brak{-\infty,-1} \cup \brak{0,2}$
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.4.py}@*)
+\end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.58\linewidth]{figs/1.2.4.png}\caption{Unit vectors $\vec{a}$, $\vec{b}$ and $\vec{a}+\vec{b}$ with angle $\frac{2\pi}{3}$.}\end{figure}
+
+\item[1.2.5] Write the vector equation of the plane, passing through the point $(a, b, c)$ and parallel to the plane $\vec{r}\cdot(\hat{i}+\hat{j}+\hat{k})=2$.\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+In column form, the given plane is $\vec{n}^{\top}\vec{x}=2$ with $\vec{n}=\begin{bmatrix}1\\1\\1\end{bmatrix}$, and $\vec{P}_0=\begin{bmatrix}a\\b\\c\end{bmatrix}$. Using (\ref{formula-1-1-4}),
+\[
+\vec{n}^{\top}\vec{x}=\vec{n}^{\top}\vec{P}_0\implies\boxed{\begin{bmatrix}1&1&1\end{bmatrix}\vec{x}=a+b+c}.
+\]
+The Python program draws both planes for the assumed point $\vec{P}_0=\begin{bmatrix}1\\2\\3\end{bmatrix}$, for which the plane is $\begin{bmatrix}1&1&1\end{bmatrix}\vec{x}=6$:
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.5.py}@*)
+\end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.5.png}\caption{Parallel planes with the common normal $\vec{n}$.}\end{figure}
+
+\item[1.2.6] Using properties of determinants, prove that
+\[
+\begin{vmatrix}2y&y-z-x&2y\\2z&2z&z-x-y\\x-y-z&2x&2x\end{vmatrix}=(x+y+z)^3
+\]\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+Let $s=x+y+z$ and $\Delta$ be the determinant. Using (\ref{formula-1-1-5}), apply $R_1\to R_1+R_2+R_3$, take out $s$, and then apply $C_2\to C_2-C_1$, $C_3\to C_3-C_1$:
+\[
+\begin{aligned}
+\Delta&=s\begin{vmatrix}1&1&1\\2z&2z&z-x-y\\x-y-z&2x&2x\end{vmatrix}
+=s\begin{vmatrix}1&0&0\\2z&0&-s\\x-y-z&s&s\end{vmatrix}\\
+&=s\cdot s^2=(x+y+z)^3.
+\end{aligned}
+\]
+The Python code verifies the identity at random points.
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.6.py}@*)
+\end{lstlisting}
+
+\item[1.2.7]
+\noindent(a) Find the intervals in which the function $f(x)=3x^4-4x^3-12x^2+5$ is
+\begin{enumerate}[label=(\alph*)]
+\setlength{\itemsep}{0pt}
+    \item strictly increasing
+    \item strictly decreasing
+\end{enumerate}\par
+\noindent\textbf{OR}\par
+\noindent(b) Find the equations of the tangent and normal to the curve $x=a\sin^3\theta$ and $y=a\cos^3\theta$ at $\theta=\dfrac{\pi}{4}$.\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+(a) Here $f^{\prime}(x)=12x^3-12x^2-24x$ and $f^{\prime\prime}(x)=36x^2-24x-24$. The sign of $f^{\prime}$ can change only at the roots of $f^{\prime}(x)=0$. Using (\ref{formula-1-1-2}) with $f^{\prime}$ in place of $f$,
+\[
+x_{n+1}=x_n-\frac{12x_n^3-12x_n^2-24x_n}{36x_n^2-24x_n-24}.
+\]
+Starting from $x_0=-1.5$, $0.4$ and $2.5$, the iteration converges to $x=-1$, $0$ and $2$ respectively. Factorization independently confirms the result:
+\[
+f^{\prime}(x)=12x(x+1)(x-2)=0\implies x=-1,0,2.
+\]
+The sign of $f^{\prime}$ on each interval is
+\[
+\begin{array}{c|c|c|c|c}
+\text{Interval} & (-\infty,-1) & (-1,0) & (0,2) & (2,\infty)\\\hline
+\text{Sign of }f^{\prime} & - & + & - & +
+\end{array}
+\]
+Hence, by the derivative test (\ref{formula-1-1-6}), $f$ is
+\begin{enumerate}[label=(\alph*)]
+\setlength{\itemsep}{0pt}
+    \item strictly increasing on $\boxed{(-1,0)\cup(2,\infty)}$,
+    \item strictly decreasing on $\boxed{(-\infty,-1)\cup(0,2)}$.
 \end{enumerate}
-The following code verifies the solution and generates \figref{fig:EE26BTECH11203-incr}.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Increasing\_Function.py}@*)
-\end{lstlisting}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Increasing_Function.png}
-    \caption{Intervals of increase and decrease}
-    \label{fig:EE26BTECH11203-incr}
-\end{figure}
 
-\item
-Evaluate : $\displaystyle\int \dfrac{\sin^6 x + \cos^6 x}{\sin^2 x \cdot \cos^2 x}\, dx$
-\par
-\medskip
-\solution
-Let $a = \sin^2x$, $b = \cos^2x$, so that $a + b = 1$. From \eqref{eq:EE26BTECH11203-cube-sum},
-\begin{align}
-\sin^6x + \cos^6x = a^3 + b^3 = 1 - 3ab
-\end{align}
-Then the integrand is
-\begin{align}
-\frac{1 - 3ab}{ab} = \frac{a+b}{ab} - 3 = \sec^2x + \cosec^2x - 3
-\end{align}
-From the standard integrals,
-\begin{align}
-\int \frac{\sin^6 x + \cos^6 x}{\sin^2 x \cos^2 x}\, dx = \tan x - \cot x - 3x + C
-\end{align}
-The following code verifies the solution.
+The C program applies Newton--Raphson from the three starting values and verifies the roots:
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Trig\_Integral.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.7a.c}@*)
 \end{lstlisting}
-
-\item
-Find the particular solution of the differential equation $e^x\sqrt{1-y^2}\, dx + \dfrac{y}{x}\, dy = 0$, given that $y = 1$ when $x = 0$.
-\par
-\medskip
-\solution
-Multiplying by $\frac{x}{\sqrt{1-y^2}}$, the variables get separated:
-\begin{align}
-xe^x\, dx + \frac{y}{\sqrt{1-y^2}}\, dy = 0
-\end{align}
-Let $z = \sqrt{1-y^2}$. Then $z\, dz = -y\, dy$, and the equation becomes
-\begin{align}
-\frac{dz}{dx} = xe^x, \quad z\brak{0} = 0
-\end{align}
-Taking the Laplace transform on both sides, from \eqref{eq:EE26BTECH11203-laplace-deriv} and \eqref{eq:EE26BTECH11203-laplace-table},
-\begin{align}
-sZ\brak{s} - z\brak{0} = \frac{1}{\brak{s-1}^2}
-\implies Z\brak{s} = \frac{1}{s\brak{s-1}^2}
-\end{align}
-Using partial fractions,
-\begin{align}
-Z\brak{s} = \frac{1}{s} - \frac{1}{s-1} + \frac{1}{\brak{s-1}^2}
-\end{align}
-Taking the inverse transform from \eqref{eq:EE26BTECH11203-laplace-table},
-\begin{align}
-z = 1 - e^x + xe^x = \brak{x-1}e^x + 1
-\end{align}
-Hence the particular solution is
-\begin{align}
-\sqrt{1-y^2} = \brak{x-1}e^x + 1
-\end{align}
-The following code finds the transform and verifies the solution.
+The Python program plots $f$ and $f^{\prime}$ and marks the critical points:
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Separable\_ODE.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.7a.py}@*)
 \end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.7a.png}\caption{Graph of $f(x)$ and $f^{\prime}(x)$, with the roots of $f^{\prime}(x)=0$ at $x=-1,0,2$.}\end{figure}
 
-\item
-Solve the following differential equation
-\begin{align}
-\brak{x^2 - 1}\frac{dy}{dx} + 2xy = \frac{2}{x^2 - 1}
-\end{align}
-\par
-\medskip
-\solution
-Since $\brak{x^2-1}\frac{dy}{dx} + 2xy = \frac{d}{dx}\sbrak{\brak{x^2-1}y}$, let $w = \brak{x^2-1}y$. The equation becomes
-\begin{align}
-\frac{dw}{dx} = \frac{2}{x^2-1}
-\end{align}
-For $0 \le x < 1$, let $x = \tanh t$, $t \ge 0$. From \eqref{eq:EE26BTECH11203-tanh-sub},
-\begin{align}
-\frac{dw}{dt} = \frac{dw}{dx}\cdot\frac{dx}{dt} = \frac{2}{x^2-1}\brak{1-x^2} = -2, \quad w\brak{0} = w_0
-\end{align}
-Taking the Laplace transform on both sides, from \eqref{eq:EE26BTECH11203-laplace-deriv},
-\begin{align}
-sW\brak{s} - w_0 = -\frac{2}{s}
-\implies W\brak{s} = \frac{w_0}{s} - \frac{2}{s^2}
-\end{align}
-Taking the inverse transform, $w = w_0 - 2t$. Substituting $t = \frac{1}{2}\ln\frac{1+x}{1-x}$ from \eqref{eq:EE26BTECH11203-tanh-sub},
-\begin{align}
-w = \ln\frac{1-x}{1+x} + w_0
-\end{align}
-Hence, with $C = w_0$,
-\begin{align}
-y = \frac{1}{x^2-1}\sbrak{\ln\abs{\frac{x-1}{x+1}} + C}
-\end{align}
-Differentiating, $\frac{d}{dx}\ln\abs{\frac{x-1}{x+1}} = \frac{2}{x^2-1}$ for all $x \neq \pm 1$, so the same expression solves the equation on every interval. The following code finds the transform and verifies the solution.
+(b) Here $\vec{r}(\theta)=a\begin{bmatrix}\sin^3\theta\\\cos^3\theta\end{bmatrix}$, so
+\[
+\vec{r}^{\prime}(\theta)=3a\sin\theta\cos\theta\begin{bmatrix}\sin\theta\\-\cos\theta\end{bmatrix}.
+\]
+At $\theta_0=\frac{\pi}{4}$, $\vec{P}=\frac{a}{2\sqrt2}\begin{bmatrix}1\\1\end{bmatrix}$ and $\vec{t}$ is along $\begin{bmatrix}1\\-1\end{bmatrix}$, so we take $\vec{t}=\begin{bmatrix}1\\-1\end{bmatrix}$ and $\vec{n}=\begin{bmatrix}1\\1\end{bmatrix}$. Using (\ref{formula-1-1-7}),
+\[
+\begin{aligned}
+\text{Tangent: }&\begin{bmatrix}1&1\end{bmatrix}\vec{x}=\begin{bmatrix}1&1\end{bmatrix}\vec{P}\implies\boxed{x+y=\frac{a}{\sqrt2}},\\
+\text{Normal: }&\begin{bmatrix}1&-1\end{bmatrix}\vec{x}=\begin{bmatrix}1&-1\end{bmatrix}\vec{P}\implies\boxed{x-y=0}.
+\end{aligned}
+\]
+The Python program draws the curve, the tangent and the normal for the assumed value $a=2$, for which $\vec{P}=\frac{1}{\sqrt2}\begin{bmatrix}1\\1\end{bmatrix}$ and the tangent is $x+y=\sqrt2$:
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Linear\_ODE.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.7b.py}@*)
+\end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.58\linewidth]{figs/1.2.7b.png}\caption{Tangent and normal to the curve at $\vec{P}$.}\end{figure}
+
+\item[1.2.8] Find the particular solution of the differential equation $e^x\sqrt{1-y^2}\,dx+\frac{y}{x}\,dy=0$, given that $y=1$ when $x=0$.\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+Separating the variables and letting $z=\sqrt{1-y^2}$, so that $z\,dz=-y\,dy$,
+\[
+xe^x\,dx+\frac{y}{\sqrt{1-y^2}}\,dy=0\implies\frac{dz}{dx}=xe^x,\qquad z(0)=0.
+\]
+Multiplying by the unit step $u(x)$, the equation for $x\ge0$ is
+\[
+z^{\prime}(x)u(x)=xe^xu(x).
+\]
+Using (\ref{formula-1-1-8}) with $Z(s)=\mathcal{L}\{z(x)u(x)\}$ and $a=1$,
+\[
+sZ(s)-z(0)=\frac{1}{(s-1)^2}\implies Z(s)=\frac{1}{s(s-1)^2}=\frac{1}{s}-\frac{1}{s-1}+\frac{1}{(s-1)^2}.
+\]
+Taking the inverse transform term by term,
+\[
+z(x)u(x)=u(x)-e^xu(x)+xe^xu(x)=\left[(x-1)e^x+1\right]u(x).
+\]
+Since $\frac{d}{dx}\left[(x-1)e^x+1\right]=xe^x$ for every $x$, the same expression also holds for $x<0$. Hence the particular solution is
+\[
+\boxed{\sqrt{1-y^2}=(x-1)e^x+1}.
+\]
+The Python program checks the differential equation and plots the solution:
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.8.py}@*)
+\end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.8.png}\caption{The particular solution through $(0,1)$.}\end{figure}
+
+\item[1.2.9] Solve the following differential equation
+\[
+(x^2-1)\frac{dy}{dx}+2xy=\frac{2}{x^2-1}.
+\]\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+The left hand side is $\frac{d}{dx}\left[(x^2-1)y\right]$. Let $w=(x^2-1)y$, so that $\frac{dw}{dx}=\frac{2}{x^2-1}$. For $0\le x<1$, let $x=\tanh t$, $t\ge0$. Using (\ref{formula-1-1-9}), $\frac{dx}{dt}=1-x^2$, so
+\[
+\frac{dw}{dt}=\frac{dw}{dx}\cdot\frac{dx}{dt}=\frac{2}{x^2-1}(1-x^2)=-2,\qquad w(0)=w_0.
+\]
+Multiplying by the unit step $u(t)$, $w^{\prime}(t)u(t)=-2u(t)$. Using (\ref{formula-1-1-8}) with $W(s)=\mathcal{L}\{w(t)u(t)\}$,
+\[
+sW(s)-w_0=-\frac{2}{s}\implies W(s)=\frac{w_0}{s}-\frac{2}{s^2}.
+\]
+Taking the inverse transform term by term,
+\[
+w(t)u(t)=w_0u(t)-2tu(t)=(w_0-2t)u(t).
+\]
+Substituting $t=\frac{1}{2}\ln\frac{1+x}{1-x}$ from (\ref{formula-1-1-9}), with $C=w_0$,
+\[
+\boxed{y=\frac{1}{x^2-1}\left[\ln\left|\frac{x-1}{x+1}\right|+C\right]}.
+\]
+Since $\frac{d}{dx}\ln\left|\frac{x-1}{x+1}\right|=\frac{2}{x^2-1}$ for all $x\ne\pm1$, this solves the equation on every interval. The Python program checks the differential equation for $C=-1,0,2$:
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.9.py}@*)
 \end{lstlisting}
 
-\item
-Prove that, for any three vectors $\vec{a}, \vec{b}, \vec{c}$,
-\begin{align}
-\sbrak{\vec{a}+\vec{b}, \vec{b}+\vec{c}, \vec{c}+\vec{a}} = 2\sbrak{\vec{a}, \vec{b}, \vec{c}}
-\end{align}
-\par
-\medskip
-\solution
-Let $\vec{M} = \myvec{\vec{a} & \vec{b} & \vec{c}}$. Then
-\begin{align}
-\myvec{\vec{a}+\vec{b} & \vec{b}+\vec{c} & \vec{c}+\vec{a}} = \vec{M}\vec{T}, \quad
-\vec{T} = \myvec{1 & 0 & 1 \\ 1 & 1 & 0 \\ 0 & 1 & 1}
-\end{align}
-where the columns of $\vec{T}$ give the coefficients of $\vec{a}, \vec{b}, \vec{c}$. Now,
-\begin{align}
-\mydet{\vec{T}} = 1\brak{1 - 0} - 0 + 1\brak{1 - 0} = 2
-\end{align}
-From \eqref{eq:EE26BTECH11203-triple} and \eqref{eq:EE26BTECH11203-det-product},
-\begin{align}
-\sbrak{\vec{a}+\vec{b}, \vec{b}+\vec{c}, \vec{c}+\vec{a}} = \mydet{\vec{M}\vec{T}} = \mydet{\vec{M}}\mydet{\vec{T}} = 2\sbrak{\vec{a}, \vec{b}, \vec{c}}
-\end{align}
-The following code verifies the solution.
+\item[1.2.10]
+\noindent(a) Prove that, for any three vectors $\vec{a},\vec{b},\vec{c}$
+\[
+\left[\vec{a}+\vec{b},\vec{b}+\vec{c},\vec{c}+\vec{a}\right]=2\left[\vec{a},\vec{b},\vec{c}\right]
+\]\par
+\noindent\textbf{OR}\par
+\noindent(b) Vectors $\vec{a}$, $\vec{b}$ and $\vec{c}$ are such that $\vec{a}+\vec{b}+\vec{c}=\vec{0}$ and $|\vec{a}|=3$, $|\vec{b}|=5$ and $|\vec{c}|=7$. Find the angle between $\vec{a}$ and $\vec{b}$.\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+(a) Let $\vec{M}=\begin{bmatrix}\vec{a}&\vec{b}&\vec{c}\end{bmatrix}$. Then
+\[
+\begin{bmatrix}\vec{a}+\vec{b}&\vec{b}+\vec{c}&\vec{c}+\vec{a}\end{bmatrix}=\vec{M}\vec{T},\qquad
+\vec{T}=\begin{bmatrix}1&0&1\\1&1&0\\0&1&1\end{bmatrix},\qquad\det\vec{T}=2,
+\]
+so that, using (\ref{formula-1-1-10}) and (\ref{formula-1-1-5}),
+\[
+[\vec{a}+\vec{b},\vec{b}+\vec{c},\vec{c}+\vec{a}]=\det(\vec{M}\vec{T})=\det\vec{M}\det\vec{T}=2[\vec{a},\vec{b},\vec{c}].
+\]
+The Python code verifies the identity for random vectors.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Triple\_Product.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.10a.py}@*)
 \end{lstlisting}
 
-\item
-Show that the lines $\dfrac{x+1}{3} = \dfrac{y+3}{5} = \dfrac{z+5}{7}$ and $\dfrac{x-2}{1} = \dfrac{y-4}{3} = \dfrac{z-6}{5}$ intersect. Also find their point of intersection.
-\par
-\medskip
-\solution
-The lines are $\vec{x} = \vec{A}_1 + \lambda\vec{m}_1$ and $\vec{x} = \vec{A}_2 + \mu\vec{m}_2$ with
-\begin{align}
-\vec{A}_1 = \myvec{-1 \\ -3 \\ -5}, \vec{m}_1 = \myvec{3 \\ 5 \\ 7}, \vec{A}_2 = \myvec{2 \\ 4 \\ 6}, \vec{m}_2 = \myvec{1 \\ 3 \\ 5}
-\end{align}
-From \eqref{eq:EE26BTECH11203-line-isect}, the augmented matrix is
-\begin{align}
-\augvec{2}{1}{3 & -1 & 3 \\ 5 & -3 & 7 \\ 7 & -5 & 11}
-\xrightarrow[R_3 \to 3R_3 - 7R_1]{R_2 \to 3R_2 - 5R_1}
-\augvec{2}{1}{3 & -1 & 3 \\ 0 & -4 & 6 \\ 0 & -8 & 12}
-\xrightarrow{R_3 \to R_3 - 2R_2}
-\augvec{2}{1}{3 & -1 & 3 \\ 0 & -4 & 6 \\ 0 & 0 & 0}
-\end{align}
-The ranks of the coefficient matrix and the augmented matrix are both $2$, so \eqref{eq:EE26BTECH11203-consistent} holds and the lines intersect. Back-substitution gives
-\begin{align}
-\mu = -\frac{3}{2}, \quad 3\lambda = 3 + \mu \implies \lambda = \frac{1}{2}
-\end{align}
-The point of intersection is
-\begin{align}
-\vec{A}_1 + \lambda\vec{m}_1 = \myvec{\frac{1}{2} \\ -\frac{1}{2} \\ -\frac{3}{2}}
-\end{align}
-The following code verifies the solution and generates \figref{fig:EE26BTECH11203-skew}.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Skew\_Lines.py}@*)
-\end{lstlisting}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Skew_Lines.png}
-    \caption{Intersecting lines}
-    \label{fig:EE26BTECH11203-skew}
-\end{figure}
-
-\item
-Assume that each born child is equally likely to be a boy or a girl. If a family has two children, what is the conditional probability that both are girls? Given that
-\begin{enumerate}
-\item the youngest is a girl.
-\item atleast one is a girl.
+(b) Since $\vec{c}=-(\vec{a}+\vec{b})$, $\|\vec{a}+\vec{b}\|=\|\vec{c}\|=7$. Using (\ref{formula-1-1-3}) with $\|\vec{a}\|=3$ and $\|\vec{b}\|=5$,
+\[
+49=9+2\vec{a}^{\top}\vec{b}+25\implies\vec{a}^{\top}\vec{b}=\frac{15}{2}\implies\cos\theta=\frac{15/2}{3\cdot5}=\frac{1}{2}\implies\boxed{\theta=\frac{\pi}{3}}.
+\]
+The Python program draws the three vectors head to tail. Generate the plotted points from the minimum independent coordinate choice:
+\begin{enumerate}[label=\arabic*),leftmargin=1.2cm,itemsep=0pt,topsep=2pt]
+\item The vectors lie in a plane, since $\vec{c}=-(\vec{a}+\vec{b})$. Place $\vec{a}=\begin{bmatrix}3\\0\end{bmatrix}$ and let $\vec{b}=\begin{bmatrix}b_1\\b_2\end{bmatrix}$.
+\item $\vec{a}^{\top}\vec{b}=3b_1=\frac{15}{2}$ gives $b_1=\frac{5}{2}$, and $\|\vec{b}\|=5$ gives $b_2=\frac{5\sqrt3}{2}$.
+\item Then $\vec{c}=-\begin{bmatrix}\frac{11}{2}\\\frac{5\sqrt3}{2}\end{bmatrix}$, and $\|\vec{c}\|^2=\frac{121+75}{4}=49$ as required.
 \end{enumerate}
-\par
-\medskip
-\solution
-Writing the outcomes as (elder, younger), the sample space is $\cbrak{GG, GB, BG, BB}$ with probability $\frac{1}{4}$ each. Let
-\begin{itemize}
-\item $A$: both are girls $= \cbrak{GG}$
-\item $B$: the youngest is a girl $= \cbrak{GG, BG}$
-\item $C$: at least one is a girl $= \cbrak{GG, GB, BG}$
-\end{itemize}
-Since $AB = AC = A$, from \eqref{eq:EE26BTECH11203-cond},
-\begin{align}
-\pr{\cond{A}{B}} = \frac{\pr{A}}{\pr{B}} = \frac{1/4}{2/4} = \frac{1}{2}
-\\
-\pr{\cond{A}{C}} = \frac{\pr{A}}{\pr{C}} = \frac{1/4}{3/4} = \frac{1}{3}
-\end{align}
-The following code simulates the result.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Conditional\_Probability.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.10b.py}@*)
+\end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.62\linewidth]{figs/1.2.10b.png}\caption{$\vec{a}$, $\vec{b}$ and $\vec{c}$ placed head to tail form a closed triangle.}\end{figure}
+
+\item[1.2.11] Show that the lines $\dfrac{x+1}{3}=\dfrac{y+3}{5}=\dfrac{z+5}{7}$ and $\dfrac{x-2}{1}=\dfrac{y-4}{3}=\dfrac{z-6}{5}$ intersect. Also find their point of intersection.\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+The lines are $\vec{x}=\vec{A}_1+\lambda\vec{m}_1$ and $\vec{x}=\vec{A}_2+\mu\vec{m}_2$ with
+\[
+\vec{A}_1=\begin{bmatrix}-1\\-3\\-5\end{bmatrix},\quad\vec{m}_1=\begin{bmatrix}3\\5\\7\end{bmatrix},\quad\vec{A}_2=\begin{bmatrix}2\\4\\6\end{bmatrix},\quad\vec{m}_2=\begin{bmatrix}1\\3\\5\end{bmatrix},
+\]
+Using (\ref{formula-1-1-11}), the augmented matrix $[\vec{m}_1\;\;-\vec{m}_2\mid\vec{A}_2-\vec{A}_1]$ is reduced as
+\[
+\begin{aligned}
+\left[\begin{array}{cc|c}3&-1&3\\5&-3&7\\7&-5&11\end{array}\right]
+&\xrightarrow[R_3\to3R_3-7R_1]{R_2\to3R_2-5R_1}
+\left[\begin{array}{cc|c}3&-1&3\\0&-4&6\\0&-8&12\end{array}\right]\\
+&\xrightarrow{R_3\to R_3-2R_2}
+\left[\begin{array}{cc|c}3&-1&3\\0&-4&6\\0&0&0\end{array}\right].
+\end{aligned}
+\]
+Both ranks are $2$, so the lines intersect. Back substitution gives $\mu=-\frac{3}{2}$ and $\lambda=\frac{1}{2}$, so the point of intersection is
+\[
+\vec{A}_1+\lambda\vec{m}_1=\boxed{\begin{bmatrix}\frac{1}{2}\\-\frac{1}{2}\\-\frac{3}{2}\end{bmatrix}}.
+\]
+The Python program performs the elimination and plots both lines:
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.11.py}@*)
+\end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.11.png}\caption{The two lines meet at $\left(\frac{1}{2},-\frac{1}{2},-\frac{3}{2}\right)$.}\end{figure}
+
+\item[1.2.12] Assume that each born child is equally likely to be a boy or a girl. If a family has two children, what is the conditional probability that both are girls ? Given that
+\begin{enumerate}[label=(\roman*)]
+\setlength{\itemsep}{0pt}
+    \item the youngest is a girl.
+    \item atleast one is a girl.\nobreak\hfill\mbox{(12,2014)}
+\end{enumerate}
+
+
+
+\vspace{0.6em}\par\solution
+
+Let $X_1,X_2\in\{0,1\}$ for the elder and the younger child, with $1$ for a girl. These are independent and, using (\ref{formula-1-1-13}) with $p=\frac{1}{2}$, Bernoulli with $p_{X_i}(k)=\frac{1}{2}$, $k=0,1$. The number of girls $X=X_1+X_2$ is binomial, and (\ref{formula-1-1-13}) with $n=2$, $p=\frac{1}{2}$ gives
+\[
+p_X(k)=\binom{2}{k}\left(\frac{1}{2}\right)^2=\frac{\binom{2}{k}}{4},\qquad k=0,1,2.
+\]
+Both are girls if $X=2$.
+\begin{enumerate}[label=(\roman*)]
+\setlength{\itemsep}{0pt}
+    \item Using (\ref{formula-1-1-12}) with $Y=X_2$, $X=X_1+X_2$ and independence,
+\[
+    p_{X|X_2}(2|1)=\frac{p_{XX_2}(2,1)}{p_{X_2}(1)}=\frac{p_{X_1}(1)p_{X_2}(1)}{p_{X_2}(1)}=p_{X_1}(1)=\boxed{\frac{1}{2}}.
+    \]
+    \item Using (\ref{formula-1-1-12}), $P(X\ge1)=1-p_X(0)=\frac{3}{4}$, so
+\[
+    p_{X|X\ge1}(2)=\frac{p_X(2)}{1-p_X(0)}=\frac{1/4}{3/4}=\boxed{\frac{1}{3}}.
+    \]
+\end{enumerate}
+
+The Python program simulates $10^6$ families and plots the exact and simulated PMFs:
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.12.py}@*)
+\end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.94\linewidth]{figs/1.2.12.png}\caption{Exact and simulated PMFs of the number of girls $X$.}\end{figure}
+
+\item[1.2.13] Two schools P and Q want to award their selected students on the values of Discipline, Politeness and Punctuality. The school P wants to award \rupee{} $x$ each, \rupee{} $y$ each and \rupee{} $z$ each for the three respective values to its 3, 2 and 1 students with a total award money of \rupee{} 1,000. School Q wants to spend \rupee{} 1,500 to award its 4, 1 and 3 students on the respective values (by giving the same award money for the three values as before). If the total amount of awards for one prize on each value is \rupee{} 600, using matrices, find the award money for each value.\\
+Apart from the above three values, suggest one more value for awards.\unskip\nobreak\hfil\penalty50\hskip1em\hbox{}\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+The given conditions are $\vec{A}\vec{x}=\vec{b}$ with
+\[
+\vec{A}=\begin{bmatrix}3&2&1\\4&1&3\\1&1&1\end{bmatrix},\qquad\vec{x}=\begin{bmatrix}x\\y\\z\end{bmatrix},\qquad\vec{b}=\begin{bmatrix}1000\\1500\\600\end{bmatrix}.
+\]
+Using (\ref{formula-1-1-14}), with the rows reordered to start with $x+y+z=600$, $[\vec{A}\mid\vec{b}]$ is reduced as
+\[
+\begin{aligned}
+&\left[\begin{array}{ccc|c}1&1&1&600\\4&1&3&1500\\3&2&1&1000\end{array}\right]
+\xrightarrow[R_3\to R_3-3R_1]{R_2\to R_2-4R_1}
+\left[\begin{array}{ccc|c}1&1&1&600\\0&-3&-1&-900\\0&-1&-2&-800\end{array}\right]\\
+&\xrightarrow{R_3\to3R_3-R_2}
+\left[\begin{array}{ccc|c}1&1&1&600\\0&-3&-1&-900\\0&0&-5&-1500\end{array}\right].
+\end{aligned}
+\]
+Back substitution gives $z=300$, $y=200$ and $x=100$. The awards are $\boxed{\text{\rupee{} 100, \rupee{} 200 and \rupee{} 300}}$ for Discipline, Politeness and Punctuality respectively. One more value that can be awarded is Honesty. The Python code performs the elimination and back substitution.
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.13.py}@*)
 \end{lstlisting}
 
-\item
-Two schools P and Q want to award their selected students on the values of Discipline, Politeness and Punctuality. The school P wants to award \rupee{} $x$ each, \rupee{} $y$ each and \rupee{} $z$ each for the three respective values to its 3, 2 and 1 students with a total award money of \rupee{} 1,000. School Q wants to spend \rupee{} 1,500 to award its 4, 1 and 3 students on the respective values (by giving the same award money for the three values as before). If the total amount of awards for one prize on each value is \rupee{} 600, using matrices, find the award money for each value. Apart from the above three values, suggest one more value for awards.
-\par
-\medskip
-\solution
-The given conditions are
-\begin{align}
-3x + 2y + z = 1000, \quad 4x + y + 3z = 1500, \quad x + y + z = 600
-\end{align}
-or
-\begin{align}
-\myvec{3 & 2 & 1 \\ 4 & 1 & 3 \\ 1 & 1 & 1}\myvec{x \\ y \\ z} = \myvec{1000 \\ 1500 \\ 600}
-\end{align}
-Let the coefficient matrix be $\vec{A}$. Then
-\begin{align}
-\mydet{\vec{A}} = 3\brak{1-3} - 2\brak{4-3} + 1\brak{4-1} = -5 \neq 0
-\end{align}
-The adjoint of $\vec{A}$ gives
-\begin{align}
-\vec{A}^{-1} = \frac{1}{5}\myvec{2 & 1 & -5 \\ 1 & -2 & 5 \\ -3 & 1 & 5}
-\end{align}
-From \eqref{eq:EE26BTECH11203-linsolve},
-\begin{align}
-\myvec{x \\ y \\ z} = \frac{1}{5}\myvec{2 & 1 & -5 \\ 1 & -2 & 5 \\ -3 & 1 & 5}\myvec{1000 \\ 1500 \\ 600}
-= \myvec{100 \\ 200 \\ 300}
-\end{align}
-The awards are \rupee{} 100 for Discipline, \rupee{} 200 for Politeness and \rupee{} 300 for Punctuality. One more value that can be awarded is Honesty.
-The following code verifies the solution.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Matrix\_System.py}@*)
-\end{lstlisting}
+\item[1.2.14] Evaluate : $\displaystyle\int_{\pi/6}^{\pi/3}\frac{dx}{1+\sqrt{\cot x}}$\nobreak\hfill\mbox{(12,2014)}
 
-\item
-Show that the semi-vertical angle of the cone of the maximum volume and of given slant height is $\cos^{-1}\dfrac{1}{\sqrt{3}}$.
-\par
-\medskip
-\solution
-For a fixed slant height $l$, from \eqref{eq:EE26BTECH11203-cone}, the volume is a function of the height $h$:
-\begin{align}
-V\brak{h} = \frac{\pi}{3}\brak{l^2 h - h^3}
-\end{align}
-Differentiating,
-\begin{align}
-V^{\prime}\brak{h} = \frac{\pi}{3}\brak{l^2 - 3h^2} = 0 \implies h = \frac{l}{\sqrt{3}}
-\\
-V^{\prime\prime}\brak{h} = -2\pi h < 0
-\end{align}
-So $V$ is maximum at $h = \frac{l}{\sqrt{3}}$, from \eqref{eq:EE26BTECH11203-monotone}. Using $h = l\cos\alpha$,
-\begin{align}
-\cos\alpha = \frac{h}{l} = \frac{1}{\sqrt{3}} \implies \alpha = \cos^{-1}\frac{1}{\sqrt{3}}
-\end{align}
-The maximum volume is $\frac{2\pi l^3}{9\sqrt{3}}$. The following code plots $V$ as a function of $\alpha$ in \figref{fig:EE26BTECH11203-cone}.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Cone\_Volume.py}@*)
-\end{lstlisting}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Cone_Volume.png}
-    \caption{Volume of the cone versus $\alpha$}
-    \label{fig:EE26BTECH11203-cone}
-\end{figure}
 
-\item
-Evaluate : $\displaystyle\int_{\pi/6}^{\pi/3} \dfrac{dx}{1 + \sqrt{\cot x}}$
-\par
-\medskip
-\solution
-Multiplying the numerator and denominator by $\sqrt{\sin x}$,
-\begin{align}
-I = \int_{\pi/6}^{\pi/3} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}}\, dx
-\end{align}
-Here $a + b = \frac{\pi}{6} + \frac{\pi}{3} = \frac{\pi}{2}$. From \eqref{eq:EE26BTECH11203-king},
-\begin{align}
-I = \int_{\pi/6}^{\pi/3} \frac{\sqrt{\cos x}}{\sqrt{\cos x} + \sqrt{\sin x}}\, dx
-\end{align}
-Adding the two expressions of $I$,
-\begin{align}
-2I = \int_{\pi/6}^{\pi/3} dx = \frac{\pi}{3} - \frac{\pi}{6} = \frac{\pi}{6}
-\implies I = \frac{\pi}{12}
-\end{align}
-The following code verifies the solution.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Integral\_Symmetry.py}@*)
-\end{lstlisting}
 
-\item
-Find the area of the region in the first quadrant enclosed by the $x$-axis, the line $y = x$ and the circle $x^2 + y^2 = 32$.
-\par
-\medskip
-\solution
-The line $y = x$ is $\theta = \frac{\pi}{4}$ and the circle is $r = \sqrt{32} = 4\sqrt{2}$. They meet at $\brak{4,4}$. The region is $0 \le r \le 4\sqrt{2}$, $0 \le \theta \le \frac{\pi}{4}$. From \eqref{eq:EE26BTECH11203-polar-area},
-\begin{align}
-A = \int_{0}^{\pi/4}\int_{0}^{4\sqrt{2}} r\, dr\, d\theta
-= \frac{\pi}{4}\cdot\frac{32}{2} = 4\pi
-\end{align}
-The following code computes the area and generates \figref{fig:EE26BTECH11203-area}.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Area\_Polar.py}@*)
-\end{lstlisting}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\linewidth]{figs/Area_Polar.png}
-    \caption{Region enclosed by the $x$-axis, $y=x$ and the circle}
-    \label{fig:EE26BTECH11203-area}
-\end{figure}
+\vspace{0.6em}\par\solution
 
-\item
-Find the distance between the point $\brak{7, 2, 4}$ and the plane determined by the points $A\brak{2, 5, -3}$, $B\brak{-2, -3, 5}$ and $C\brak{5, 3, -3}$.
-\par
-\medskip
-\solution
-Let
-\begin{align}
-\vec{A} = \myvec{2 \\ 5 \\ -3}, \vec{B} = \myvec{-2 \\ -3 \\ 5}, \vec{C} = \myvec{5 \\ 3 \\ -3}, \vec{P} = \myvec{7 \\ 2 \\ 4}
-\end{align}
-Then $\vec{B} - \vec{A} = \myvec{-4 \\ -8 \\ 8}$ and $\vec{C} - \vec{A} = \myvec{3 \\ -2 \\ 0}$. From \eqref{eq:EE26BTECH11203-plane-3pts},
-\begin{align}
-\myvec{-4 & -8 & 8 \\ 3 & -2 & 0}\vec{n} = \vec{0}
-\xrightarrow[R_2 \to R_2 - 3R_1]{R_1 \to -\frac{R_1}{4}}
-\myvec{1 & 2 & -2 \\ 0 & -8 & 6}
-\xrightarrow[R_1 \to R_1 + \frac{R_2}{4}]{R_2 \to -\frac{R_2}{8}}
-\myvec{1 & 0 & -\frac{1}{2} \\ 0 & 1 & -\frac{3}{4}}
-\end{align}
-so $n_1 = \frac{n_3}{2}$, $n_2 = \frac{3n_3}{4}$ and we can take
-\begin{align}
-\vec{n} = \myvec{2 \\ 3 \\ 4}, \quad c = \vec{n}^{\top}\vec{A} = 4 + 15 - 12 = 7
-\end{align}
-The plane is $\myvec{2 & 3 & 4}\vec{x} = 7$. From \eqref{eq:EE26BTECH11203-plane-dist},
-\begin{align}
-d = \frac{\abs{14 + 6 + 16 - 7}}{\sqrt{4 + 9 + 16}} = \frac{29}{\sqrt{29}} = \sqrt{29}
-\end{align}
-The following code verifies the solution.
+Multiplying the numerator and denominator by $\sqrt{\sin x}$, the integrand is
+\[
+f(x)=\frac{\sqrt{\sin x}}{\sqrt{\sin x}+\sqrt{\cos x}}.
+\]
+Using (\ref{formula-1-1-15}) with $a=\frac{\pi}{6}$, $b=\frac{\pi}{3}$, $h=\frac{\pi}{6n}$ and $x_k=\frac{\pi}{6}+kh$,
+\[
+T_n=\frac{\pi}{6n}\left[\frac{f(x_0)+f(x_n)}{2}+\sum_{k=1}^{n-1}f(x_k)\right].
+\]
+Since $x_k+x_{n-k}=\frac{\pi}{2}$ and $\sin\left(\frac{\pi}{2}-x\right)=\cos x$,
+\[
+f(x_k)+f(x_{n-k})=\frac{\sqrt{\sin x_k}+\sqrt{\cos x_k}}{\sqrt{\sin x_k}+\sqrt{\cos x_k}}=1.
+\]
+Adding $T_n$ to itself with the nodes taken in reverse order,
+\[
+2T_n=h\left[\frac{1+1}{2}+\sum_{k=1}^{n-1}1\right]=nh=\frac{\pi}{6}\implies T_n=\frac{\pi}{12}
+\]
+for every $n$. Hence, by (\ref{formula-1-1-15}),
+\[
+\int_{\pi/6}^{\pi/3}\frac{dx}{1+\sqrt{\cot x}}=\lim_{n\to\infty}T_n=\boxed{\frac{\pi}{12}}.
+\]
+The Python program computes $T_n$ for several $n$ and draws the trapezoids for $n=4$:
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Plane\_Distance.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.14.py}@*)
 \end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.14.png}\caption{Trapezoidal rule with $n=4$.}\end{figure}
 
-\item
-A dealer in rural area wishes to purchase a number of sewing machines. He has only \rupee{} 5,760 to invest and has space for at most 20 items for storage. An electronic sewing machine cost him \rupee{} 360 and a manually operated sewing machine \rupee{} 240. He can sell an electronic sewing machine at a profit of \rupee{} 22 and a manually operated sewing machine at a profit of \rupee{} 18. Assuming that he can sell all the items that he can buy, how should he invest his money in order to maximize his profit? Make it as a LPP and solve it graphically.
-\par
-\medskip
-\solution
-Let $x$ electronic and $y$ manually operated machines be purchased, $\vec{x} = \myvec{x \\ y}$. The problem is
-\begin{align}
-\max Z = \myvec{22 & 18}\vec{x}
-\quad \text{s.t.} \quad
-\myvec{3 & 2 \\ 1 & 1}\vec{x} \le \myvec{48 \\ 20}, \quad \vec{x} \ge \vec{0}
-\end{align}
-where the first constraint is $360x + 240y \le 5760$. The feasible region in \figref{fig:EE26BTECH11203-lpp} is a polygon. The vertex $B$ where the two constraints are tight is
-\begin{align}
-\myvec{3 & 2 \\ 1 & 1}\vec{x} = \myvec{48 \\ 20}
-\implies \vec{x} = \myvec{1 & -2 \\ -1 & 3}\myvec{48 \\ 20} = \myvec{8 \\ 12}
-\end{align}
-The value of $Z$ at the vertices is given in the table below.
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|}
-\hline
-Vertex & $\brak{x,y}$ & $Z = 22x + 18y$ \\
-\hline
-$O$ & $\brak{0,0}$ & $0$ \\
-\hline
-$A$ & $\brak{16,0}$ & $352$ \\
-\hline
-$B$ & $\brak{8,12}$ & $392$ \\
-\hline
-$C$ & $\brak{0,20}$ & $360$ \\
-\hline
-\end{tabular}
-\caption{Profit at the vertices}
-\end{table}
-From \eqref{eq:EE26BTECH11203-corner}, the maximum profit is \rupee{} 392, when $8$ electronic and $12$ manually operated machines are purchased. The following code solves the LPP and generates \figref{fig:EE26BTECH11203-lpp}.
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/LPP.py}@*)
-\end{lstlisting}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/LPP.png}
-    \caption{Feasible region and the optimal vertex}
-    \label{fig:EE26BTECH11203-lpp}
-\end{figure}
+\item[1.2.15]
+\noindent(a) Find the distance between the point $(7, 2, 4)$ and the plane determined by the points $A(2, 5, -3)$, $B(-2, -3, 5)$ and $C(5, 3, -3)$.\par
+\noindent\textbf{OR}\par
+\noindent(b) Find the distance of the point $(-1, -5, -10)$ from the point of intersection of the line $\vec{r}=2\hat{i}-\hat{j}+2\hat{k}+\lambda(3\hat{i}+4\hat{j}+2\hat{k})$ and the plane $\vec{r}\cdot(\hat{i}-\hat{j}+\hat{k})=5$.\nobreak\hfill\mbox{(12,2014)}
 
-\item
-A card from a pack of 52 playing cards is lost. From the remaining cards of the pack three cards are drawn at random (without replacement) and are found to be all spades. Find the probability of the lost card being a spade.
-\par
-\medskip
-\solution
-Let
-\begin{itemize}
-\item $E_1$: the lost card is a spade, $\pr{E_1} = \frac{13}{52} = \frac{1}{4}$
-\item $E_2$: the lost card is not a spade, $\pr{E_2} = \frac{3}{4}$
-\item $A$: three spades are drawn from the remaining $51$ cards
-\end{itemize}
-If $E_1$ occurs, $12$ spades remain, and if $E_2$ occurs, $13$ spades remain. So
-\begin{align}
-\pr{\cond{A}{E_1}} = \frac{\comb{12}{3}}{\comb{51}{3}} = \frac{220}{\comb{51}{3}}, \quad
-\pr{\cond{A}{E_2}} = \frac{\comb{13}{3}}{\comb{51}{3}} = \frac{286}{\comb{51}{3}}
-\end{align}
-From \eqref{eq:EE26BTECH11203-bayes},
-\begin{align}
-\pr{\cond{E_1}{A}} = \frac{\frac{1}{4}\cdot 220}{\frac{1}{4}\cdot 220 + \frac{3}{4}\cdot 286}
-= \frac{220}{1078} = \frac{10}{49}
-\end{align}
-The following code verifies the solution.
+
+
+\vspace{0.6em}\par\solution
+
+(a) Let
+\[
+\vec{A}=\begin{bmatrix}2\\5\\-3\end{bmatrix},\quad\vec{B}=\begin{bmatrix}-2\\-3\\5\end{bmatrix},\quad\vec{C}=\begin{bmatrix}5\\3\\-3\end{bmatrix},\quad\vec{P}=\begin{bmatrix}7\\2\\4\end{bmatrix},
+\]
+so $\vec{B}-\vec{A}=\begin{bmatrix}-4\\-8\\8\end{bmatrix}$ and $\vec{C}-\vec{A}=\begin{bmatrix}3\\-2\\0\end{bmatrix}$. Using (\ref{formula-1-1-4}),
+\[
+\begin{aligned}
+\begin{bmatrix}-4&-8&8\\3&-2&0\end{bmatrix}\vec{n}=\vec{0}
+&\xrightarrow[R_2\to R_2-3R_1]{R_1\to-\frac{R_1}{4}}
+\begin{bmatrix}1&2&-2\\0&-8&6\end{bmatrix}\\
+&\xrightarrow[R_1\to R_1+\frac{R_2}{4}]{R_2\to-\frac{R_2}{8}}
+\begin{bmatrix}1&0&-\frac{1}{2}\\0&1&-\frac{3}{4}\end{bmatrix},
+\end{aligned}
+\]
+so we can take $\vec{n}=\begin{bmatrix}2\\3\\4\end{bmatrix}$, with $c=\vec{n}^{\top}\vec{A}=7$. Using (\ref{formula-1-1-4}) again,
+\[
+d=\frac{|\vec{n}^{\top}\vec{P}-c|}{\|\vec{n}\|}=\frac{|36-7|}{\sqrt{29}}=\boxed{\sqrt{29}}.
+\]
+The Python program computes the normal and the distance, and draws the plane with the perpendicular from $\vec{P}$:
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Bayes.py}@*)
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.15a.py}@*)
 \end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.15a.png}\caption{The plane through $\vec{A}$, $\vec{B}$, $\vec{C}$ and the perpendicular from $\vec{P}$ along the normal $\vec{n}$.}\end{figure}
+
+(b) In column form, the line is $\vec{x}=\vec{A}+\lambda\vec{m}$ and the plane is $\vec{n}^{\top}\vec{x}=c$ with
+\[
+\vec{A}=\begin{bmatrix}2\\-1\\2\end{bmatrix},\quad\vec{m}=\begin{bmatrix}3\\4\\2\end{bmatrix},\quad\vec{n}=\begin{bmatrix}1\\-1\\1\end{bmatrix},\quad c=5.
+\]
+Using (\ref{formula-1-1-16}),
+\[
+\lambda=\frac{c-\vec{n}^{\top}\vec{A}}{\vec{n}^{\top}\vec{m}}=\frac{5-5}{1}=0,\qquad\vec{Q}=\vec{A}=\begin{bmatrix}2\\-1\\2\end{bmatrix}.
+\]
+For $\vec{P}=\begin{bmatrix}-1\\-5\\-10\end{bmatrix}$,
+\[
+\|\vec{P}-\vec{Q}\|=\left\|\begin{bmatrix}-3\\-4\\-12\end{bmatrix}\right\|=\sqrt{9+16+144}=\boxed{13}.
+\]
+The Python program computes $\vec{Q}$ and the distance, and draws the line, the plane and its normal $\vec{n}$ at $\vec{Q}$:
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.15b.py}@*)
+\end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.15b.png}\caption{The line meets the plane at $\vec{Q}$; the normal $\vec{n}$ is perpendicular to the plane.}\end{figure}
+
+\item[1.2.16] A dealer in rural area wishes to purchase a number of sewing machines. He has only \rupee{} 5,760 to invest and has space for at most 20 items for storage. An electronic sewing machine cost him \rupee{} 360 and a manually operated sewing machine \rupee{} 240. He can sell an electronic sewing machine at a profit of \rupee{} 22 and a manually operated sewing machine at a profit of \rupee{} 18. Assuming that he can sell all the items that he can buy, how should he invest his money in order to maximize his profit ? Make it as a LPP and solve it graphically.\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+Let $x$ electronic and $y$ manually operated machines be purchased, $\vec{x}=\begin{bmatrix}x\\y\end{bmatrix}$. The problem is
+\[
+\max Z=\begin{bmatrix}22&18\end{bmatrix}\vec{x}\quad\text{s.t.}\quad\vec{A}\vec{x}\le\vec{b},\quad\vec{x}\ge\vec{0},
+\]
+with
+\[
+\vec{A}=\begin{bmatrix}3&2\\1&1\end{bmatrix},\qquad\vec{b}=\begin{bmatrix}48\\20\end{bmatrix},
+\]
+where the first constraint is $360x+240y\le5760$. At the vertex $B$, both constraints are tight, so $\vec{A}\vec{x}=\vec{b}$. Using (\ref{formula-1-1-14}),
+\[
+\left[\begin{array}{cc|c}3&2&48\\1&1&20\end{array}\right]\xrightarrow{R_2\to3R_2-R_1}\left[\begin{array}{cc|c}3&2&48\\0&1&12\end{array}\right],
+\]
+so $y=12$, $3x=48-2y=24$ and $B=\begin{bmatrix}8\\12\end{bmatrix}$.
+Using (\ref{formula-1-1-17}), $Z$ is evaluated at each vertex:
+\[
+\begin{array}{c|c|c|c|c}
+\text{Vertex} & O(0,0) & A(16,0) & B(8,12) & C(0,20)\\\hline
+Z=22x+18y & 0 & 352 & 392 & 360
+\end{array}
+\]
+Thus $\boxed{Z_{\max}=392}$, when $8$ electronic and $12$ manually operated machines are purchased. The Python code solves this linear program with cvxpy and plots the feasible region:
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.16.py}@*)
+\end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.16.png}\caption{The maximum is at $\vec{x}=\begin{bmatrix}8\\12\end{bmatrix}$.}\end{figure}
+
+\item[1.2.17] A card from a pack of 52 playing cards is lost. From the remaining cards of the pack three cards are drawn at random (without replacement) and are found to be all spades. Find the probability of the lost card being a spade.\nobreak\hfill\mbox{(12,2014)}
+
+
+
+\vspace{0.6em}\par\solution
+
+Let $Y=1$ if the lost card is a spade and $Y=0$ otherwise, and let $X$ be the number of spades among the three cards drawn. Using (\ref{formula-1-1-13}), $Y$ is Bernoulli with $p=\frac{1}{4}$ and, given $Y=y$, $X$ is hypergeometric with $N=51$ cards, $K=13-y$ spades and $n=3$ draws:
+\[
+p_Y(y)=\left(\frac{1}{4}\right)^y\left(\frac{3}{4}\right)^{1-y},\qquad
+p_{X|Y}(k|y)=\frac{\binom{13-y}{k}\binom{38+y}{3-k}}{\binom{51}{3}},
+\]
+so that, with $\binom{51}{3}=20825$,
+\[
+p_{X|Y}(3|1)=\frac{\binom{12}{3}\binom{39}{0}}{\binom{51}{3}}=\frac{220}{20825},\qquad
+p_{X|Y}(3|0)=\frac{\binom{13}{3}\binom{38}{0}}{\binom{51}{3}}=\frac{286}{20825}.
+\]
+Using (\ref{formula-1-1-12}),
+\[
+p_{Y|X}(1|3)=\frac{\frac{1}{4}\cdot\frac{220}{20825}}{\frac{1}{4}\cdot\frac{220}{20825}+\frac{3}{4}\cdot\frac{286}{20825}}=\frac{220}{220+858}=\frac{220}{1078}=\boxed{\frac{10}{49}}.
+\]
+The Python program simulates $10^7$ trials and plots the exact and simulated PMFs:
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.17.py}@*)
+\end{lstlisting}
+\begin{figure}[H]\centering\includegraphics[width=0.94\linewidth]{figs/1.2.17.png}\caption{Exact and simulated PMFs of $X$ and of $Y$ given $X=3$.}\end{figure}
 \end{enumerate}
