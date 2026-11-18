@@ -10,9 +10,11 @@ Using (\ref{formula-1-1-1}) with $x_1=x$, $x_2=1$ and the rows $\vec{r}_1=\begin
 \begin{bmatrix}x&1\end{bmatrix}\vec{B}=x\vec{r}_1+\vec{r}_2=\begin{bmatrix}x-2&0\end{bmatrix}=\begin{bmatrix}0&0\end{bmatrix}\implies\boxed{x=2}.
 \]
 The Python code verifies the product.
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.1.py}@*)
 \end{lstlisting}
+\end{minipage}\par
 
 \item[1.2.2] If $\begin{vmatrix}2x&5\\8&x\end{vmatrix}=\begin{vmatrix}6&-2\\7&3\end{vmatrix}$, write the value of $x$.\nobreak\hfill\mbox{(12,2014)}
 
@@ -31,14 +33,18 @@ Starting from $x_0=2$, the iteration converges to $x=6$; starting from $x_0=-8$,
 Hence $\boxed{x=\pm6}$, which agrees with the Newton--Raphson values.
 
 The C program applies Newton--Raphson from both starting values and verifies the roots:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.2.c}@*)
 \end{lstlisting}
+\end{minipage}\par
 The Python program plots the two curves and marks their intersections:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.2.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.2.png}\caption{Intersections of $y=2x^2-40$ and $y=32$, corresponding to roots $x=-6$ and $x=6$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.2.png}\caption{Intersections of $y=2x^2-40$ and $y=32$, corresponding to roots $x=-6$ and $x=6$.}\end{figure}
 
 \item[1.2.3] Find the projection of the vector $\hat{i}+3\hat{j}+7\hat{k}$ on the vector $2\hat{i}-3\hat{j}+6\hat{k}$.\nobreak\hfill\mbox{(12,2014)}
 
@@ -51,10 +57,12 @@ In column form, $\vec{a}=\begin{bmatrix}1\\3\\7\end{bmatrix}$ and $\vec{b}=\begi
 \frac{\vec{a}^{\top}\vec{b}}{\|\vec{b}\|}=\frac{2-9+42}{\sqrt{4+9+36}}=\frac{35}{7}=\boxed{5}.
 \]
 The Python program draws $\vec{a}$, $\vec{b}$ and the projection vector $\frac{5}{7}\vec{b}$:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.3.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.3.png}\caption{Projection of $\vec{a}$ on $\vec{b}$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.3.png}\caption{Projection of $\vec{a}$ on $\vec{b}$.}\end{figure}
 
 \item[1.2.4] If $\vec{a}$ and $\vec{b}$ are two unit vectors such that $\vec{a}+\vec{b}$ is also a unit vector, then find the angle between $\vec{a}$ and $\vec{b}$.\nobreak\hfill\mbox{(12,2014)}
 
@@ -72,10 +80,12 @@ The Python program draws one configuration of the vectors. Generate the plotted 
 \item $\vec{a}^{\top}\vec{b}=b_1=-\frac{1}{2}$, and $\|\vec{b}\|=1$ gives $b_2=\frac{\sqrt3}{2}$.
 \item Then $\vec{a}+\vec{b}=\begin{bmatrix}\frac{1}{2}\\\frac{\sqrt3}{2}\end{bmatrix}$, which is a unit vector.
 \end{enumerate}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.4.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.58\linewidth]{figs/1.2.4.png}\caption{Unit vectors $\vec{a}$, $\vec{b}$ and $\vec{a}+\vec{b}$ with angle $\frac{2\pi}{3}$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.4.png}\caption{Unit vectors $\vec{a}$, $\vec{b}$ and $\vec{a}+\vec{b}$ with angle $\frac{2\pi}{3}$.}\end{figure}
 
 \item[1.2.5] Write the vector equation of the plane, passing through the point $(a, b, c)$ and parallel to the plane $\vec{r}\cdot(\hat{i}+\hat{j}+\hat{k})=2$.\nobreak\hfill\mbox{(12,2014)}
 
@@ -88,10 +98,12 @@ In column form, the given plane is $\vec{n}^{\top}\vec{x}=2$ with $\vec{n}=\begi
 \vec{n}^{\top}\vec{x}=\vec{n}^{\top}\vec{P}_0\implies\boxed{\begin{bmatrix}1&1&1\end{bmatrix}\vec{x}=a+b+c}.
 \]
 The Python program draws both planes for the assumed point $\vec{P}_0=\begin{bmatrix}1\\2\\3\end{bmatrix}$, for which the plane is $\begin{bmatrix}1&1&1\end{bmatrix}\vec{x}=6$:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.5.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.5.png}\caption{Parallel planes with the common normal $\vec{n}$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.5.png}\caption{Parallel planes with the common normal $\vec{n}$.}\end{figure}
 
 \item[1.2.6] Using properties of determinants, prove that
 \[
@@ -111,9 +123,11 @@ Let $s=x+y+z$ and $\Delta$ be the determinant. Using (\ref{formula-1-1-5}), appl
 \end{aligned}
 \]
 The Python code verifies the identity at random points.
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.6.py}@*)
 \end{lstlisting}
+\end{minipage}\par
 
 \item[1.2.7]
 \noindent(a) Find the intervals in which the function $f(x)=3x^4-4x^3-12x^2+5$ is
@@ -152,14 +166,18 @@ Hence, by the derivative test (\ref{formula-1-1-6}), $f$ is
 \end{enumerate}
 
 The C program applies Newton--Raphson from the three starting values and verifies the roots:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.7a.c}@*)
 \end{lstlisting}
+\end{minipage}\par
 The Python program plots $f$ and $f^{\prime}$ and marks the critical points:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.7a.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.7a.png}\caption{Graph of $f(x)$ and $f^{\prime}(x)$, with the roots of $f^{\prime}(x)=0$ at $x=-1,0,2$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.7a.png}\caption{Graph of $f(x)$ and $f^{\prime}(x)$, with the roots of $f^{\prime}(x)=0$ at $x=-1,0,2$.}\end{figure}
 
 (b) Here $\vec{r}(\theta)=a\begin{bmatrix}\sin^3\theta\\\cos^3\theta\end{bmatrix}$, so
 \[
@@ -173,10 +191,12 @@ At $\theta_0=\frac{\pi}{4}$, $\vec{P}=\frac{a}{2\sqrt2}\begin{bmatrix}1\\1\end{b
 \end{aligned}
 \]
 The Python program draws the curve, the tangent and the normal for the assumed value $a=2$, for which $\vec{P}=\frac{1}{\sqrt2}\begin{bmatrix}1\\1\end{bmatrix}$ and the tangent is $x+y=\sqrt2$:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.7b.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.58\linewidth]{figs/1.2.7b.png}\caption{Tangent and normal to the curve at $\vec{P}$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.7b.png}\caption{Tangent and normal to the curve at $\vec{P}$.}\end{figure}
 
 \item[1.2.8] Find the particular solution of the differential equation $e^x\sqrt{1-y^2}\,dx+\frac{y}{x}\,dy=0$, given that $y=1$ when $x=0$.\nobreak\hfill\mbox{(12,2014)}
 
@@ -205,10 +225,12 @@ Since $\frac{d}{dx}\left[(x-1)e^x+1\right]=xe^x$ for every $x$, the same express
 \boxed{\sqrt{1-y^2}=(x-1)e^x+1}.
 \]
 The Python program checks the differential equation and plots the solution:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.8.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.8.png}\caption{The particular solution through $(0,1)$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.8.png}\caption{The particular solution through $(0,1)$.}\end{figure}
 
 \item[1.2.9] Solve the following differential equation
 \[
@@ -236,9 +258,11 @@ Substituting $t=\frac{1}{2}\ln\frac{1+x}{1-x}$ from (\ref{formula-1-1-9}), with 
 \boxed{y=\frac{1}{x^2-1}\left[\ln\left|\frac{x-1}{x+1}\right|+C\right]}.
 \]
 Since $\frac{d}{dx}\ln\left|\frac{x-1}{x+1}\right|=\frac{2}{x^2-1}$ for all $x\ne\pm1$, this solves the equation on every interval. The Python program checks the differential equation for $C=-1,0,2$:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.9.py}@*)
 \end{lstlisting}
+\end{minipage}\par
 
 \item[1.2.10]
 \noindent(a) Prove that, for any three vectors $\vec{a},\vec{b},\vec{c}$
@@ -262,9 +286,11 @@ so that, using (\ref{formula-1-1-10}) and (\ref{formula-1-1-5}),
 [\vec{a}+\vec{b},\vec{b}+\vec{c},\vec{c}+\vec{a}]=\det(\vec{M}\vec{T})=\det\vec{M}\det\vec{T}=2[\vec{a},\vec{b},\vec{c}].
 \]
 The Python code verifies the identity for random vectors.
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.10a.py}@*)
 \end{lstlisting}
+\end{minipage}\par
 
 (b) Since $\vec{c}=-(\vec{a}+\vec{b})$, $\|\vec{a}+\vec{b}\|=\|\vec{c}\|=7$. Using (\ref{formula-1-1-3}) with $\|\vec{a}\|=3$ and $\|\vec{b}\|=5$,
 \[
@@ -276,10 +302,12 @@ The Python program draws the three vectors head to tail. Generate the plotted po
 \item $\vec{a}^{\top}\vec{b}=3b_1=\frac{15}{2}$ gives $b_1=\frac{5}{2}$, and $\|\vec{b}\|=5$ gives $b_2=\frac{5\sqrt3}{2}$.
 \item Then $\vec{c}=-\begin{bmatrix}\frac{11}{2}\\\frac{5\sqrt3}{2}\end{bmatrix}$, and $\|\vec{c}\|^2=\frac{121+75}{4}=49$ as required.
 \end{enumerate}
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.10b.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.62\linewidth]{figs/1.2.10b.png}\caption{$\vec{a}$, $\vec{b}$ and $\vec{c}$ placed head to tail form a closed triangle.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.10b.png}\caption{$\vec{a}$, $\vec{b}$ and $\vec{c}$ placed head to tail form a closed triangle.}\end{figure}
 
 \item[1.2.11] Show that the lines $\dfrac{x+1}{3}=\dfrac{y+3}{5}=\dfrac{z+5}{7}$ and $\dfrac{x-2}{1}=\dfrac{y-4}{3}=\dfrac{z-6}{5}$ intersect. Also find their point of intersection.\nobreak\hfill\mbox{(12,2014)}
 
@@ -306,10 +334,12 @@ Both ranks are $2$, so the lines intersect. Back substitution gives $\mu=-\frac{
 \vec{A}_1+\lambda\vec{m}_1=\boxed{\begin{bmatrix}\frac{1}{2}\\-\frac{1}{2}\\-\frac{3}{2}\end{bmatrix}}.
 \]
 The Python program performs the elimination and plots both lines:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.11.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.11.png}\caption{The two lines meet at $\left(\frac{1}{2},-\frac{1}{2},-\frac{3}{2}\right)$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.11.png}\caption{The two lines meet at $\left(\frac{1}{2},-\frac{1}{2},-\frac{3}{2}\right)$.}\end{figure}
 
 \item[1.2.12] Assume that each born child is equally likely to be a boy or a girl. If a family has two children, what is the conditional probability that both are girls ? Given that
 \begin{enumerate}[label=(\roman*)]
@@ -322,7 +352,7 @@ The Python program performs the elimination and plots both lines:
 
 \vspace{0.6em}\par\solution
 
-Let $X_1,X_2\in\{0,1\}$ for the elder and the younger child, with $1$ for a girl. These are independent and, using (\ref{formula-1-1-13}) with $p=\frac{1}{2}$, Bernoulli with $p_{X_i}(k)=\frac{1}{2}$, $k=0,1$. The number of girls $X=X_1+X_2$ is binomial, and (\ref{formula-1-1-13}) with $n=2$, $p=\frac{1}{2}$ gives
+Let $X_1,X_2\in\{0,1\}$ for the elder and the younger child, with $1$ for a girl. These are independent Bernoulli variables, and using (\ref{formula-1-1-13}) with $p=\frac{1}{2}$, $p_{X_i}(k)=\frac{1}{2}$ for $k=0,1$. The number of girls $X=X_1+X_2$ is binomial, and (\ref{formula-1-1-13}) with $n=2$, $p=\frac{1}{2}$ gives
 \[
 p_X(k)=\binom{2}{k}\left(\frac{1}{2}\right)^2=\frac{\binom{2}{k}}{4},\qquad k=0,1,2.
 \]
@@ -340,10 +370,12 @@ Both are girls if $X=2$.
 \end{enumerate}
 
 The Python program simulates $10^6$ families and plots the exact and simulated PMFs:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.12.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.94\linewidth]{figs/1.2.12.png}\caption{Exact and simulated PMFs of the number of girls $X$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.80\linewidth]{figs/1.2.12.png}\caption{Exact and simulated PMFs of the number of girls $X$.}\end{figure}
 
 \item[1.2.13] Two schools P and Q want to award their selected students on the values of Discipline, Politeness and Punctuality. The school P wants to award \rupee{} $x$ each, \rupee{} $y$ each and \rupee{} $z$ each for the three respective values to its 3, 2 and 1 students with a total award money of \rupee{} 1,000. School Q wants to spend \rupee{} 1,500 to award its 4, 1 and 3 students on the respective values (by giving the same award money for the three values as before). If the total amount of awards for one prize on each value is \rupee{} 600, using matrices, find the award money for each value.\\
 Apart from the above three values, suggest one more value for awards.\unskip\nobreak\hfil\penalty50\hskip1em\hbox{}\nobreak\hfill\mbox{(12,2014)}
@@ -366,10 +398,16 @@ Using (\ref{formula-1-1-14}), with the rows reordered to start with $x+y+z=600$,
 \left[\begin{array}{ccc|c}1&1&1&600\\0&-3&-1&-900\\0&0&-5&-1500\end{array}\right].
 \end{aligned}
 \]
-Back substitution gives $z=300$, $y=200$ and $x=100$. The awards are $\boxed{\text{\rupee{} 100, \rupee{} 200 and \rupee{} 300}}$ for Discipline, Politeness and Punctuality respectively. One more value that can be awarded is Honesty. The Python code performs the elimination and back substitution.
+Back substitution gives
+\[
+\boxed{x=100,\quad y=200,\quad z=300}.
+\]
+The awards are \rupee{} 100 for Discipline, \rupee{} 200 for Politeness and \rupee{} 300 for Punctuality. One more value that can be awarded is Honesty. The Python code performs the elimination and back substitution.
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.13.py}@*)
 \end{lstlisting}
+\end{minipage}\par
 
 \item[1.2.14] Evaluate : $\displaystyle\int_{\pi/6}^{\pi/3}\frac{dx}{1+\sqrt{\cot x}}$\nobreak\hfill\mbox{(12,2014)}
 
@@ -398,10 +436,12 @@ for every $n$. Hence, by (\ref{formula-1-1-15}),
 \int_{\pi/6}^{\pi/3}\frac{dx}{1+\sqrt{\cot x}}=\lim_{n\to\infty}T_n=\boxed{\frac{\pi}{12}}.
 \]
 The Python program computes $T_n$ for several $n$ and draws the trapezoids for $n=4$:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.14.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.14.png}\caption{Trapezoidal rule with $n=4$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.14.png}\caption{Trapezoidal rule with $n=4$.}\end{figure}
 
 \item[1.2.15]
 \noindent(a) Find the distance between the point $(7, 2, 4)$ and the plane determined by the points $A(2, 5, -3)$, $B(-2, -3, 5)$ and $C(5, 3, -3)$.\par
@@ -431,10 +471,12 @@ so we can take $\vec{n}=\begin{bmatrix}2\\3\\4\end{bmatrix}$, with $c=\vec{n}^{\
 d=\frac{|\vec{n}^{\top}\vec{P}-c|}{\|\vec{n}\|}=\frac{|36-7|}{\sqrt{29}}=\boxed{\sqrt{29}}.
 \]
 The Python program computes the normal and the distance, and draws the plane with the perpendicular from $\vec{P}$:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.15a.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.15a.png}\caption{The plane through $\vec{A}$, $\vec{B}$, $\vec{C}$ and the perpendicular from $\vec{P}$ along the normal $\vec{n}$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.15a.png}\caption{The plane through $\vec{A}$, $\vec{B}$, $\vec{C}$ and the perpendicular from $\vec{P}$ along the normal $\vec{n}$.}\end{figure}
 
 (b) In column form, the line is $\vec{x}=\vec{A}+\lambda\vec{m}$ and the plane is $\vec{n}^{\top}\vec{x}=c$ with
 \[
@@ -449,10 +491,12 @@ For $\vec{P}=\begin{bmatrix}-1\\-5\\-10\end{bmatrix}$,
 \|\vec{P}-\vec{Q}\|=\left\|\begin{bmatrix}-3\\-4\\-12\end{bmatrix}\right\|=\sqrt{9+16+144}=\boxed{13}.
 \]
 The Python program computes $\vec{Q}$ and the distance, and draws the line, the plane and its normal $\vec{n}$ at $\vec{Q}$:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.15b.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.15b.png}\caption{The line meets the plane at $\vec{Q}$; the normal $\vec{n}$ is perpendicular to the plane.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.15b.png}\caption{The line meets the plane at $\vec{Q}$; the normal $\vec{n}$ is perpendicular to the plane.}\end{figure}
 
 \item[1.2.16] A dealer in rural area wishes to purchase a number of sewing machines. He has only \rupee{} 5,760 to invest and has space for at most 20 items for storage. An electronic sewing machine cost him \rupee{} 360 and a manually operated sewing machine \rupee{} 240. He can sell an electronic sewing machine at a profit of \rupee{} 22 and a manually operated sewing machine at a profit of \rupee{} 18. Assuming that he can sell all the items that he can buy, how should he invest his money in order to maximize his profit ? Make it as a LPP and solve it graphically.\nobreak\hfill\mbox{(12,2014)}
 
@@ -481,10 +525,12 @@ Z=22x+18y & 0 & 352 & 392 & 360
 \end{array}
 \]
 Thus $\boxed{Z_{\max}=392}$, when $8$ electronic and $12$ manually operated machines are purchased. The Python code solves this linear program with cvxpy and plots the feasible region:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.16.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.68\linewidth]{figs/1.2.16.png}\caption{The maximum is at $\vec{x}=\begin{bmatrix}8\\12\end{bmatrix}$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.50\linewidth]{figs/1.2.16.png}\caption{The maximum is at $\vec{x}=\begin{bmatrix}8\\12\end{bmatrix}$.}\end{figure}
 
 \item[1.2.17] A card from a pack of 52 playing cards is lost. From the remaining cards of the pack three cards are drawn at random (without replacement) and are found to be all spades. Find the probability of the lost card being a spade.\nobreak\hfill\mbox{(12,2014)}
 
@@ -507,8 +553,10 @@ Using (\ref{formula-1-1-12}),
 p_{Y|X}(1|3)=\frac{\frac{1}{4}\cdot\frac{220}{20825}}{\frac{1}{4}\cdot\frac{220}{20825}+\frac{3}{4}\cdot\frac{286}{20825}}=\frac{220}{220+858}=\frac{220}{1078}=\boxed{\frac{10}{49}}.
 \]
 The Python program simulates $10^7$ trials and plots the exact and simulated PMFs:
+\par\noindent\begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/1.2.17.py}@*)
 \end{lstlisting}
-\begin{figure}[H]\centering\includegraphics[width=0.94\linewidth]{figs/1.2.17.png}\caption{Exact and simulated PMFs of $X$ and of $Y$ given $X=3$.}\end{figure}
+\end{minipage}\par
+\begin{figure}[H]\centering\includegraphics[width=0.80\linewidth]{figs/1.2.17.png}\caption{Exact and simulated PMFs of $X$ and of $Y$ given $X=3$.}\end{figure}
 \end{enumerate}

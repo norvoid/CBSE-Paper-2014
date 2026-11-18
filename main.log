@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.10.30)  18 NOV 2026 13:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.10.30)  18 NOV 2026 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1343,35 +1343,35 @@ Package caption Info: longtable package is loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 27.
+Package hyperref Info: Option `colorlinks' set `true' on input line 26.
 \@indexfile=\write4
 \openout4 = `main.idx'.
 
 
 Writing index file main.idx
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 31.
+h' as default language. on input line 30.
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 -- Lines per column: 45 (approximate, difference = 0.60239pt).
 *geometry* driver: auto-detecting
@@ -1408,14 +1408,14 @@ LaTeX Font Info:    ... okay on input line 31.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \celsius on input line 31.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 31.
+LaTeX Info: Redefining \celsius on input line 30.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 30.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 31.
-Package gensymb Info: Using \Omega for \ohm on input line 31.
+LaTeX Info: Redefining \ohm on input line 30.
+Package gensymb Info: Using \Omega for \ohm on input line 30.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -1426,7 +1426,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 31.
+or `english'. on input line 30.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1450,7 +1450,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 31.
+Package hyperref Info: Link coloring ON on input line 30.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
@@ -1462,7 +1462,7 @@ Package caption Info: End \AtBeginDocument code.
 <figs/logo.jpg, id=43, 2537.48pt x 2047.65pt>
 File: figs/logo.jpg Graphic file (type jpg)
 <use figs/logo.jpg>
-Package pdftex.def Info: figs/logo.jpg  used on input line 58.
+Package pdftex.def Info: figs/logo.jpg  used on input line 57.
 (pdftex.def)             Requested size: 72.83794pt x 58.77106pt.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf
 -dist/fonts/enc/dvips/base/8r.enc}
@@ -1491,99 +1491,97 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
  [3]
 (./chapters/cbse-2014_formulae.tex [4
 
-]) (./chapters/cbse-2014.tex [5]
-<figs/1.2.2.png, id=117, 505.89pt x 361.35pt>
+] [5]) (./chapters/cbse-2014.tex
+<figs/1.2.2.png, id=117, 491.436pt x 346.896pt>
 File: figs/1.2.2.png Graphic file (type png)
 <use figs/1.2.2.png>
-Package pdftex.def Info: figs/1.2.2.png  used on input line 41.
-(pdftex.def)             Requested size: 247.65013pt x 176.89763pt.
+Package pdftex.def Info: figs/1.2.2.png  used on input line 47.
+(pdftex.def)             Requested size: 182.09764pt x 128.54005pt.
  [6]
-<figs/1.2.3.png, id=130, 505.89pt x 433.62pt>
+<figs/1.2.3.png, id=130, 453.1329pt x 419.166pt>
 File: figs/1.2.3.png Graphic file (type png)
 <use figs/1.2.3.png>
-Package pdftex.def Info: figs/1.2.3.png  used on input line 57.
-(pdftex.def)             Requested size: 247.65013pt x 212.27716pt.
+Package pdftex.def Info: figs/1.2.3.png  used on input line 65.
+(pdftex.def)             Requested size: 182.09764pt x 168.44373pt.
 
-[7 <./figs/1.2.2.png>]
-<figs/1.2.4.png, id=141, 433.62pt x 433.62pt>
+[7 <./figs/1.2.2.png> <./figs/1.2.3.png>]
+<figs/1.2.4.png, id=143, 420.25005pt x 410.4936pt>
 File: figs/1.2.4.png Graphic file (type png)
 <use figs/1.2.4.png>
-Package pdftex.def Info: figs/1.2.4.png  used on input line 78.
-(pdftex.def)             Requested size: 211.23393pt x 211.23837pt.
- [8 <./figs/1.2.3.png>]
-<figs/1.2.5.png, id=154, 505.89pt x 433.62pt>
+Package pdftex.def Info: figs/1.2.4.png  used on input line 88.
+(pdftex.def)             Requested size: 182.09764pt x 177.87427pt.
+ [8 <./figs/1.2.4.png>]
+<figs/1.2.5.png, id=157, 435.7881pt x 419.166pt>
 File: figs/1.2.5.png Graphic file (type png)
 <use figs/1.2.5.png>
-Package pdftex.def Info: figs/1.2.5.png  used on input line 94.
-(pdftex.def)             Requested size: 247.65013pt x 212.27716pt.
- [9 <./figs/1.2.4.png>] [10 <./figs/1.2.5.png>]
-<figs/1.2.7a.png, id=177, 578.16pt x 433.62pt>
+Package pdftex.def Info: figs/1.2.5.png  used on input line 106.
+(pdftex.def)             Requested size: 182.09764pt x 175.15308pt.
+ [9 <./figs/1.2.5.png>]
+<figs/1.2.7a.png, id=171, 563.706pt x 419.166pt>
 File: figs/1.2.7a.png Graphic file (type png)
 <use figs/1.2.7a.png>
-Package pdftex.def Info: figs/1.2.7a.png  used on input line 162.
-(pdftex.def)             Requested size: 247.65013pt x 185.73177pt.
- [11]
-<figs/1.2.7b.png, id=189, 505.89pt x 505.89pt>
+Package pdftex.def Info: figs/1.2.7a.png  used on input line 180.
+(pdftex.def)             Requested size: 182.09764pt x 135.40225pt.
+ [10]
+<figs/1.2.7b.png, id=185, 492.52005pt x 489.62926pt>
 File: figs/1.2.7b.png Graphic file (type png)
 <use figs/1.2.7b.png>
-Package pdftex.def Info: figs/1.2.7b.png  used on input line 179.
-(pdftex.def)             Requested size: 211.23393pt x 211.23726pt.
- [12 <./figs/1.2.7a.png>] [13 <./figs/1.2.7b.png>]
-<figs/1.2.8.png, id=207, 505.89pt x 361.35pt>
+Package pdftex.def Info: figs/1.2.7b.png  used on input line 199.
+(pdftex.def)             Requested size: 182.09764pt x 181.0255pt.
+ [11 <./figs/1.2.7a.png>]
+<figs/1.2.8.png, id=195, 491.436pt x 346.896pt>
 File: figs/1.2.8.png Graphic file (type png)
 <use figs/1.2.8.png>
-Package pdftex.def Info: figs/1.2.8.png  used on input line 211.
-(pdftex.def)             Requested size: 247.65013pt x 176.89763pt.
- [14 <./figs/1.2.8.png>]
-<figs/1.2.10b.png, id=221, 505.89pt x 433.62pt>
+Package pdftex.def Info: figs/1.2.8.png  used on input line 233.
+(pdftex.def)             Requested size: 182.09764pt x 128.54005pt.
+ [12 <./figs/1.2.7b.png>] [13 <./figs/1.2.8.png>]
+<figs/1.2.10b.png, id=219, 475.5366pt x 419.166pt>
 File: figs/1.2.10b.png Graphic file (type png)
 <use figs/1.2.10b.png>
-Package pdftex.def Info: figs/1.2.10b.png  used on input line 282.
-(pdftex.def)             Requested size: 225.7993pt x 193.54585pt.
- [15] [16 <./figs/1.2.10b.png>]
-<figs/1.2.11.png, id=243, 578.16pt x 433.62pt>
+Package pdftex.def Info: figs/1.2.10b.png  used on input line 310.
+(pdftex.def)             Requested size: 182.09764pt x 160.51276pt.
+ [14]
+<figs/1.2.11.png, id=232, 439.76295pt x 419.166pt>
 File: figs/1.2.11.png Graphic file (type png)
 <use figs/1.2.11.png>
-Package pdftex.def Info: figs/1.2.11.png  used on input line 312.
-(pdftex.def)             Requested size: 247.65013pt x 185.73177pt.
- [17 <./figs/1.2.11.png>]
-<figs/1.2.12.png, id=260, 939.51pt x 289.08pt>
+Package pdftex.def Info: figs/1.2.11.png  used on input line 342.
+(pdftex.def)             Requested size: 182.09764pt x 173.57329pt.
+ [15 <./figs/1.2.10b.png>]
+<figs/1.2.12.png, id=245, 925.056pt x 274.626pt>
 File: figs/1.2.12.png Graphic file (type png)
 <use figs/1.2.12.png>
-Package pdftex.def Info: figs/1.2.12.png  used on input line 346.
-(pdftex.def)             Requested size: 342.34447pt x 105.33467pt.
- [18 <./figs/1.2.12.png>]
-<figs/1.2.14.png, id=273, 505.89pt x 361.35pt>
+Package pdftex.def Info: figs/1.2.12.png  used on input line 378.
+(pdftex.def)             Requested size: 291.35735pt x 86.49507pt.
+ [16 <./figs/1.2.11.png>] [17 <./figs/1.2.12.png>]
+<figs/1.2.14.png, id=271, 491.436pt x 346.896pt>
 File: figs/1.2.14.png Graphic file (type png)
 <use figs/1.2.14.png>
-Package pdftex.def Info: figs/1.2.14.png  used on input line 404.
-(pdftex.def)             Requested size: 247.65013pt x 176.89763pt.
- [19] [20 <./figs/1.2.14.png>]
-<figs/1.2.15a.png, id=292, 578.16pt x 433.62pt>
+Package pdftex.def Info: figs/1.2.14.png  used on input line 444.
+(pdftex.def)             Requested size: 182.09764pt x 128.54005pt.
+ [18 <./figs/1.2.14.png>]
+<figs/1.2.15a.png, id=282, 425.30894pt x 419.166pt>
 File: figs/1.2.15a.png Graphic file (type png)
 <use figs/1.2.15a.png>
-Package pdftex.def Info: figs/1.2.15a.png  used on input line 437.
-(pdftex.def)             Requested size: 247.65013pt x 185.73177pt.
-<figs/1.2.15b.png, id=294, 578.16pt x 433.62pt>
+Package pdftex.def Info: figs/1.2.15a.png  used on input line 479.
+(pdftex.def)             Requested size: 182.09764pt x 179.47035pt.
+ [19]
+<figs/1.2.15b.png, id=292, 419.166pt x 419.166pt>
 File: figs/1.2.15b.png Graphic file (type png)
 <use figs/1.2.15b.png>
-Package pdftex.def Info: figs/1.2.15b.png  used on input line 455.
-(pdftex.def)             Requested size: 247.65013pt x 185.73177pt.
- [21 <./figs/1.2.15a.png>]
-[22 <./figs/1.2.15b.png>]
-<figs/1.2.16.png, id=313, 578.16pt x 505.89pt>
+Package pdftex.def Info: figs/1.2.15b.png  used on input line 499.
+(pdftex.def)             Requested size: 182.09764pt x 182.09909pt.
+ [20 <./figs/1.2.15a.png>] [21 <./figs/1.2.15b.png>]
+<figs/1.2.16.png, id=309, 563.706pt x 491.436pt>
 File: figs/1.2.16.png Graphic file (type png)
 <use figs/1.2.16.png>
-Package pdftex.def Info: figs/1.2.16.png  used on input line 487.
-(pdftex.def)             Requested size: 247.65013pt x 216.68706pt.
- [23 <./figs/1.2.16.png>]
-<figs/1.2.17.png, id=324, 794.97pt x 289.08pt>
+Package pdftex.def Info: figs/1.2.16.png  used on input line 533.
+(pdftex.def)             Requested size: 182.09764pt x 158.74747pt.
+<figs/1.2.17.png, id=312, 780.516pt x 274.626pt>
 File: figs/1.2.17.png Graphic file (type png)
 <use figs/1.2.17.png>
-Package pdftex.def Info: figs/1.2.17.png  used on input line 513.
-(pdftex.def)             Requested size: 342.34447pt x 124.49164pt.
-) [24 <./figs/1.2.17.png>]
-(./main.aux)
+Package pdftex.def Info: figs/1.2.17.png  used on input line 561.
+(pdftex.def)             Requested size: 291.35735pt x 102.51515pt.
+ [22 <./figs/1.2.16.png>]) [23 <./figs/1.2.17.png>] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1592,13 +1590,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4EEA6FDD4456E4E4A3A75054B3302C97;442.
  ) 
 Here is how much of TeX's memory you used:
- 54451 strings out of 467533
- 1305512 string characters out of 5422137
- 1939888 words of memory out of 5000000
+ 54450 strings out of 467533
+ 1305535 string characters out of 5422137
+ 1938888 words of memory out of 5000000
  82462 multiletter control sequences out of 15000+600000
- 663305 words of font info for 111 fonts, out of 8000000 for 9000
+ 662449 words of font info for 109 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 109i,17n,118p,1194b,1433s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,17n,118p,1194b,1342s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
@@ -1614,10 +1612,10 @@ m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 e/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on main.pdf (24 pages, 2194150 bytes).
+Output written on main.pdf (23 pages, 2101427 bytes).
 PDF statistics:
- 432 PDF objects out of 1000 (max. 8388607)
- 323 compressed objects within 4 object streams
- 134 named destinations out of 1000 (max. 500000)
+ 428 PDF objects out of 1000 (max. 8388607)
+ 320 compressed objects within 4 object streams
+ 133 named destinations out of 1000 (max. 500000)
  213 words of extra memory for PDF output out of 10000 (max. 10000000)
 

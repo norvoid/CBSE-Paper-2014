@@ -33,4 +33,4 @@ for a, th, sm, title in ((ax[0], pX, sim_pX, r'$p_X(k)$'),
     a.grid(True, linestyle='--', alpha=0.5)
     a.legend()
 plt.tight_layout()
-plt.savefig('figs/1.2.12.png')
+plt.savefig('figs/1.2.12.png', dpi=200, bbox_inches='tight', pad_inches=0.05)
